@@ -1,0 +1,105 @@
+/* Path: assets\scss\main.css */
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Login Page Start */
+
+body, html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #EBECF0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body, p, input, select, textarea, button {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 16px;
+}
+
+div, p {
+    color: #BABECC;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0);
+}
+
+form {
+    padding: 16px;
+    width: 320px;
+    margin: 0 auto;
+}
+
+.segment {
+    padding: 32px;
+    text-align: center;
+}
+
+button, input {
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    border-radius: 320px;
+    padding: 16px;
+    background-color: #EBECF0;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0);
+}
+
+label {
+    display: block;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+input {
+    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    margin-right: 8px;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input:focus {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+button {
+    color: #61677C;
+    font-weight: bold;
+    font-weight: 600;
+    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+Button:hover {
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+}
+
+button:active {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+button .icon {
+    margin-right: 8px;
+}
+
+button.red {
+    display: block;
+    width: 100%;
+    color: #AE1100;
+}
+
+/* Login Page End */
