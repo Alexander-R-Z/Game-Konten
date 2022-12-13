@@ -1,0 +1,99 @@
+hey, how are you?
+Hello! I'm just a computer program, so I don't have feelings or emotions like a human does. I exist to provide information and answer questions to the best of my ability. Is there anything I can help you with today?
+
+
+
+alexander.riccardo.z@gmail.com
+I have a problem with some php code can you help me with that?
+Sure, I'd be happy to help with PHP code if I can. Can you provide more information about the specific problem you're having? It would also be helpful if you could provide the relevant code so I can take a look at it.
+
+
+
+
+alexander.riccardo.z@gmail.com
+I want to connect with my data base but there is an error in the following code:
+<?php
+require "DataBaseConfig.php";
+
+class DataBase
+{
+    public $connect;
+    public $data;
+    private $sql;
+    protected $servername;
+    protected $username;
+    protected $password;
+    protected $databasename;
+
+    public function __construct()
+    {
+        $this->connect = null;
+        $this->data = null;
+        $this->sql = null;
+        $dbc = new DataBaseConfig();
+        $this->servername = $dbc->servername;
+        $this->username = $dbc->username;
+        $this->password = $dbc->password;
+        $this->databasename = $dbc->databasename;
+    }
+
+    function dbConnect()
+    {
+        $this->connect = mysqli_connect($this->servername, $this->username, $this->password, $this->databasename);
+        return $this->connect;
+    }
+
+    function prepareData($data)
+    {
+        return mysqli_real_escape_string($this->connect, stripslashes(htmlspecialchars($data)));
+    }
+
+    function logIn($table, $username, $password)
+    {
+        $username = $this->prepareData($username);
+        $password = $this->prepareData($password);
+        $this->sql = "select * from " . $table . " where username = '" . $username . "'";
+        $result = mysqli_query($this->connect, $this->sql);
+        $row = mysqli_fetch_assoc($result);
+        if (mysqli_num_rows($result) != 0) {
+            $dbusername = $row['username'];
+            $dbpassword = $row['password'];
+            if ($dbusername == $username && password_verify($password, $dbpassword)) {
+                $login = true;
+            } else $login = false;
+        } else $login = false;
+
+        return $login;
+    }
+
+    function signUp($table, $fullname, $email, $username, $password)
+    {
+        $fullname = $this->prepareData($fullname);
+        $username = $this->prepareData($username);
+        $password = $this->prepareData($password);
+        $email = $this->prepareData($email);
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $this->sql =
+            "INSERT INTO " . $table . " (fullname, username, password, email) VALUES ('" . $fullname . "','" . $username . "','" . $password . "','" . $email . "')";
+        if (mysqli_query($this->connect, $this->sql)) {
+            return true;
+        } else return false;
+    }
+
+}
+It looks like there is no error in the code that you've provided. The code contains a class called DataBase, which defines a number of methods for connecting to a database, preparing data for insertion into a database, logging in to a database, and signing up for a database. However, it's difficult for me to say whether this code will work for you without more information about your specific setup and what you're trying to accomplish.
+
+
+
+
+alexander.riccardo.z@gmail.com
+Well the error message says this:
+Expected type 'mysqli'. Found 'null'.
+This error message indicates that you are trying to use a variable that has not been initialized or has a value of null. In the code you provided, the $connect property of the DataBase class is initialized to null in the constructor, but it is not given a value until the dbConnect method is called. If the dbConnect method is not called before you try to use the $connect variable, it will still have a value of null, which is causing the error you're seeing.
+
+To fix this, you will need to make sure that the dbConnect method is called before you try to use the $connect variable. You can do this by calling the dbConnect method when you create a new instance of the DataBase class, like this:
+
+Copy code
+$db = new DataBase();
+$db->dbConnect();
+This will create a new DataBase object and call the dbConnect method, which will initialize the $connect variable with a value. Then you should be able to use the $connect variable without encountering the error.
