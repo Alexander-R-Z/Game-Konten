@@ -13,7 +13,7 @@ class DataBase
 
     public function __construct()
     {
-        $this->connect; // = null;
+        $this->connect = null;
         $this->data = null;
         $this->sql = null;
         $dbc = new DataBaseConfig();
