@@ -59,7 +59,7 @@ button, input {
     font-size: 16px;
     border-radius: 320px;
     padding: 16px;
-    background-color: #EBECF0;
+    background-color: #202020;
     text-shadow: 1px 1px 0px rgba(255, 255, 255, 0);
 }
 
@@ -70,33 +70,34 @@ label {
 }
 
 input {
-    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    box-shadow: inset 2px 2px 5px #171717, inset -5px -5px 10px #292929;
     margin-right: 8px;
     width: 100%;
     transition: all 0.2s ease-in-out;
     appearance: none;
     -webkit-appearance: none;
+    color: #cacedb;
 }
 
 input:focus {
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    box-shadow: inset 1px 1px 2px #171717, inset -1px -1px 2px #292929;
 }
 
 button {
     color: #61677C;
     font-weight: bold;
     font-weight: 600;
-    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    box-shadow: -5px -5px 20px #282828, 5px 5px 20px #121212;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
 
 Button:hover {
-    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+    box-shadow: -2px -2px 5px #292929, 2px 2px 5px #121212;
 }
 
 button:active {
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    box-shadow: inset 1px 1px 2px #121212, inset -1px -1px 2px #292929;
 }
 
 button .icon {
