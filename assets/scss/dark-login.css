@@ -29,6 +29,11 @@ main {
     letter-spacing: -0.2px;
     font-size: 16px;
     color: #BABECC;
+    /*scale: 1.03;*/
+}
+
+h1 {
+    color: #FFF;
 }
 
 body, p, input, select, textarea, button {
@@ -39,7 +44,7 @@ body, p, input, select, textarea, button {
 
 div, p {
     color: #BABECC;
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0);
+    text-shadow: 1px 1px 1px #2e2e2e;
 }
 
 form {
@@ -60,7 +65,7 @@ button, input {
     border-radius: 320px;
     padding: 16px;
     background-color: #202020;
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0);
+    text-shadow: 1px 1px 1px #333;
 }
 
 label {
@@ -84,6 +89,7 @@ input:focus {
 }
 
 button {
+    margin-top: 35px;
     color: #61677C;
     font-weight: bold;
     font-weight: 600;

@@ -39,7 +39,7 @@ body, p, input, select, textarea, button {
 
 div, p {
     color: #BABECC;
-    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0);
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.95);
 }
 
 form {
@@ -60,7 +60,7 @@ button, input {
     border-radius: 320px;
     padding: 16px;
     background-color: #EBECF0;
-    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0);
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.85);
 }
 
 label {
