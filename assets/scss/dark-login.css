@@ -8,6 +8,12 @@
     box-sizing: border-box;
 }
 
+:root{
+    --primary-color: ;
+    --secondary-color: ;
+    --background-color: #1E1E1E;
+}
+
 /* Login Page Start */
 
 body, html {
@@ -15,7 +21,7 @@ body, html {
     font-size: 16px;
     line-height: 1.5;
     color: #333;
-    background-color: #1E1E1E;
+    background-color: var(--background-color);
 }
 
 body {

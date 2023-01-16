@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+:root{
+    --primary-color: #BABECC;
+    --secondary-color: #EBECF0;
+}
+
 /* Login Page Start */
 
 body, html {
@@ -15,7 +20,7 @@ body, html {
     font-size: 16px;
     line-height: 1.5;
     color: #333;
-    background-color: #EBECF0;
+    background-color: var(--secondary-color);
 }
 
 body {
@@ -28,7 +33,7 @@ main {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -0.2px;
     font-size: 16px;
-    color: #BABECC;
+    color: var(--primary-color);
 }
 
 body, p, input, select, textarea, button {
@@ -38,7 +43,7 @@ body, p, input, select, textarea, button {
 }
 
 div, p {
-    color: #BABECC;
+    color: var(--primary-color);
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.95);
 }
 
@@ -59,7 +64,7 @@ button, input {
     font-size: 16px;
     border-radius: 320px;
     padding: 16px;
-    background-color: #EBECF0;
+    background-color: var(--secondary-color);
     text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.85);
 }
 
@@ -70,7 +75,7 @@ label {
 }
 
 input {
-    box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px #FFF;
+    box-shadow: inset 2px 2px 5px var(--primary-color), inset -5px -5px 10px #FFF;
     margin-right: 8px;
     width: 100%;
     transition: all 0.2s ease-in-out;
@@ -79,24 +84,24 @@ input {
 }
 
 input:focus {
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    box-shadow: inset 1px 1px 2px var(--primary-color), inset -1px -1px 2px #FFF;
 }
 
 button {
     color: #61677C;
     font-weight: bold;
     font-weight: 600;
-    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px #BABECC;
+    box-shadow: -5px -5px 20px #FFF, 5px 5px 20px var(--primary-color);
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
 
 Button:hover {
-    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+    box-shadow: -2px -2px 5px #FFF, 2px 2px 5px var(--primary-color);
 }
 
 button:active {
-    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+    box-shadow: inset 1px 1px 2px var(--primary-color), inset -1px -1px 2px #FFF;
 }
 
 button .icon {
