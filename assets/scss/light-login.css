@@ -11,13 +11,15 @@
 :root{
     --primary-color: #BABECC;
     --secondary-color: #EBECF0;
+    --text-color: #282828;
+    --heding-color: #242424;
 }
 
 /* Header Start */
 
 header {
-    background-color: #333;
-    color: #fff;
+    width: 100%;
+    color: var(--text-color);
   }
   
   nav {
@@ -29,6 +31,11 @@ header {
   
   nav h2 {
     margin: 0;
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    text-shadow: none;
   }
   
   nav ul {
@@ -36,6 +43,10 @@ header {
     list-style: none;
     margin: 0;
     padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: none;
   }
   
   nav ul li {
@@ -43,7 +54,7 @@ header {
   }
   
   nav ul li a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
   }
   
@@ -52,9 +63,13 @@ header {
   }
   
   .login-section a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
     margin-left: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    text-shadow: none;
   }
   
 
@@ -70,17 +85,14 @@ body, html {
     background-color: var(--secondary-color);
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 main {
     font-family: 'Open Sans', sans-serif;
     letter-spacing: -0.2px;
     font-size: 16px;
     color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
@@ -142,6 +154,7 @@ input:focus {
 }
 
 button {
+    margin-top: 35px;
     color: #61677C;
     font-weight: bold;
     font-weight: 600;

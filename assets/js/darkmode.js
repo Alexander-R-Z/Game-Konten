@@ -18,7 +18,7 @@ if (currentTheme === 'darkmode') {
 	enableDarkMode(); // Enable Dark Mode
 } // End If
 
-darkModeToggle.addEventListener('click', function () {
+darkModeToggle.addEventListener('click', () => {
 	currentTheme = localStorage.getItem('theme'); // Get Dark Mode from Local Storage to refresh the value
 	if (currentTheme !== 'darkmode') {
 		// If Dark Mode is not Enabled
