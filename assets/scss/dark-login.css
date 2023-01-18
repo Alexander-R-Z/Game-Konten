@@ -14,6 +14,53 @@
     --background-color: #1E1E1E;
 }
 
+/* Header Start */
+
+header {
+    width: 100%;
+    color: #fff;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  nav h2 {
+    margin: 0;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .login-section {
+    display: flex;
+  }
+  
+  .login-section a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+
+/* Header End */
+
 /* Login Page Start */
 
 body, html {
@@ -24,26 +71,29 @@ body, html {
     background-color: var(--background-color);
 }
 
-body {
+
+
+main {
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: -0.2px;
+    font-size: 16px;
+    color: #BABECC;
+    /*scale: 1.03;*/
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-main {
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: -0.2px;
-    font-size: 16px;
-    color: #BABECC;
-    /*scale: 1.03;*/
-}
-
 h1 {
-    color: #FFF;
+    color: #000;
+    text-shadow: 1px 1px 1px #111;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 60px;
+    font-weight: 600;
 }
 
 body, p, input, select, textarea, button {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     letter-spacing: -0.2px;
     font-size: 16px;
 }

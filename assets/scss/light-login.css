@@ -13,6 +13,53 @@
     --secondary-color: #EBECF0;
 }
 
+/* Header Start */
+
+header {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  nav h2 {
+    margin: 0;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    margin-right: 10px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .login-section {
+    display: flex;
+  }
+  
+  .login-section a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+
+/* Header End */
+
 /* Login Page Start */
 
 body, html {
@@ -30,14 +77,21 @@ body {
 }
 
 main {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     letter-spacing: -0.2px;
     font-size: 16px;
     color: var(--primary-color);
 }
 
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 60px;
+    text-shadow: 1px 1px 1px rgba(240, 240, 240, 0.95);
+    font-weight: 600;
+}
+
 body, p, input, select, textarea, button {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     letter-spacing: -0.2px;
     font-size: 16px;
 }
