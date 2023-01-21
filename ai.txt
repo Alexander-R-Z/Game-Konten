@@ -10,7 +10,7 @@ Sure, I'd be happy to help with PHP code if I can. Can you provide more informat
 
 
 
-alexander.riccardo.z@gmail.com
+alexander...@gmail.com
 I want to connect with my data base but there is an error in the following code:
 <?php
 require "DataBaseConfig.php";
