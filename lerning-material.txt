@@ -1,11 +1,28 @@
+HTML, CSS & JS*
 Responsive navbar tutorial using HTML CSS & JS
 https://www.youtube.com/watch?v=HbBMp6yUXO0
 
 
+
+HTML, CSS*
 Flexbox or grid - How to decide?
 https://www.youtube.com/watch?v=3elGSZSWTbM
 
 
+
+scss/sass*
+SCSS / SASS Tutorial für Anfänger (Deutsch)
+https://www.youtube.com/watch?v=tHTe1Sag1Oc&list=PL6awdbhSOdrY49gRU83XsPfl5C9zppV53&index=7
+
+
+
+JS*
+5 JavaScript Konzepte die du kennen musst (als Anfänger)
+https://www.youtube.com/watch?v=LZpS4xS307Q
+
+
+
+CSS*
 Are you using the WRONG color model in your CSS?
 https://www.youtube.com/watch?v=Ab9pHqhsfcc
 
@@ -14,12 +31,6 @@ https://www.youtube.com/watch?v=Ab9pHqhsfcc
 SQLite
 PHP SQLite Tutorial - Backend Programing Language Full Course - Part 3
 https://www.youtube.com/watch?v=YqRvFS97hwo
-
-
-
-scss/sass
-SCSS / SASS Tutorial für Anfänger (Deutsch)
-https://www.youtube.com/watch?v=tHTe1Sag1Oc&list=PL6awdbhSOdrY49gRU83XsPfl5C9zppV53&index=7
 
 
 
