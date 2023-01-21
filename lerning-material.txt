@@ -14,3 +14,9 @@ https://www.youtube.com/watch?v=Ab9pHqhsfcc
 SQLite
 PHP SQLite Tutorial - Backend Programing Language Full Course - Part 3
 https://www.youtube.com/watch?v=YqRvFS97hwo
+
+
+
+scss/sass
+SCSS / SASS Tutorial für Anfänger (Deutsch)
+https://www.youtube.com/watch?v=tHTe1Sag1Oc&list=PL6awdbhSOdrY49gRU83XsPfl5C9zppV53&index=7
