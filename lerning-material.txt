@@ -1,0 +1,16 @@
+Responsive navbar tutorial using HTML CSS & JS
+https://www.youtube.com/watch?v=HbBMp6yUXO0
+
+
+Flexbox or grid - How to decide?
+https://www.youtube.com/watch?v=3elGSZSWTbM
+
+
+Are you using the WRONG color model in your CSS?
+https://www.youtube.com/watch?v=Ab9pHqhsfcc
+
+
+
+SQLite
+PHP SQLite Tutorial - Backend Programing Language Full Course - Part 3
+https://www.youtube.com/watch?v=YqRvFS97hwo

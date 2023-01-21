@@ -9,10 +9,10 @@
 }
 
 :root{
-    --primary-color: #BABECC;
-    --secondary-color: #EBECF0;
-    --text-color: #282828;
-    --heding-color: #242424;
+    --primary-color: hsl(227, 15%, 76%);
+    --secondary-color: hsl(228, 14%, 93%);
+    --text-color: hsl(0, 0%, 16%);
+    --heding-color: hsl(0, 0%, 14%);
 }
 
 /* Header Start */
