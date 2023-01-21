@@ -1,0 +1,52 @@
+I use for this Project = *
+formulahendry.auto-close-tag *
+formulahendry.auto-rename-tag *
+ms-vscode.cpptools
+ms-vscode.cpptools-themes
+huibizhang.codesnap-plus *
+Dart-Code.dart-code
+dbaeumer.vscode-eslint
+miguelsolorio.fluent-icons
+Dart-Code.flutter
+GitHub.copilot
+GitHub.copilot-labs
+GitHub.vscode-pull-request-github *
+codezombiech.gitignore I will probably use it in the future.
+eamodio.gitlens *
+ms-python.isort
+glenn2223.live-sass *
+ritwickdey.LiveServer *
+ms-vsliveshare.vsliveshare not used yet
+equinusocio.vsc-material-theme-icons
+AdamCaviness.theme-monokai-dark-soda
+fabiospampinato.vscode-monokai-night
+jakebathman.mysql-syntax
+be5invis.vscode-icontheme-nomo-dark
+bmewburn.vscode-intelephense-client *
+brapifra.phpserver *
+esbenp.prettier-vscode *
+ms-python.vscode-pylance
+ms-python.python
+alexcvzz.vscode-sqlite *
+qwtel.sqlite-viewer *
+TabNine.tabnine-vscode *
+GitHub.copilot-nightly
+yandeu.five-server
+PKief.material-icon-theme
+
+
+all the once use in this project
+
+formulahendry.auto-close-tag
+formulahendry.auto-rename-tag
+huibizhang.codesnap-plus
+GitHub.vscode-pull-request-github
+eamodio.gitlens
+glenn2223.live-sass
+ritwickdey.LiveServer
+bmewburn.vscode-intelephense-client
+brapifra.phpserver
+esbenp.prettier-vscode
+alexcvzz.vscode-sqlite
+qwtel.sqlite-viewer
+TabNine.tabnine-vscode
