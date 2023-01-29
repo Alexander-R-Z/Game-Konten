@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
     //starting the session if not started yet
     if(!isset($_SESSION)){session_start();}
@@ -8,7 +7,12 @@
         <meta charset="utf-8" />
         <title>Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link id="stylesheet" rel="stylesheet" href="assets/scss/dark-login.css" />
+        <link id="stylesheet" rel="stylesheet" href="../scss/dark-login.css" />
+        <!-- Latest compiled and minified CSS -->
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         <link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,33 +39,20 @@
           </header>
           
         <main>
-            <div class="container">
-                <form method="POST" action="assets/php/sqlite/login.inc.php">
-                    <div class="segment">
-                        <h1>Login</h1>
-                    </div>
-
-                    <label></label>
-                        <input type="text" name="username" placeholder="Username" required="required"/>
-                    
-                    <label></label>
-                        <input type="password" name="password" placeholder="Password" required="required"/>
-                    
-                    <?php
-					    //checking if the session 'error' is set. Erro session is the message if the 'Username' and 'Password' is not valid.
-					    if(ISSET($_SESSION['error'])){
-				    ?>
-				    <!-- Display Login Error message -->
-					<div class="alert alert-danger"><?php echo $_SESSION['error']?></div>
-				    <?php
-					    //Unsetting the 'error' session after displaying the message. 
-					    unset($_SESSION['error']);
-					    }
-				    ?>
-                    <button class="red" name="login"><i class="icon ion-md-lock"></i>Login</button>
-                </form>
-                <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode ">Dark Mode</button>
-            </div>
+            <h1>Accounts</h1>
+            <article>
+                <h2>Valorant</h2>
+                <?php
+                    $count = 3;
+                    echo "<ul class=\"valoDataGrid\">
+                        <li class=\"create-new-entety\"><div class=\"col-sm-3\"><p>p-test-create</p><form>form-test-create...</form></div></li>";
+                    for ($i = 0; $i < $count; $i++) {
+                        echo "<li class=\"create-new-entety\"><div class=\"col-sm-3\"><p>p-test-dynamic...</p><form>form-test-dynamic...</form></div></li>";
+                    }
+                    echo "</ul>";
+                ?>
+            </article>
+            
  
         </main>
     </body>

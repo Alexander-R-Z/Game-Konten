@@ -19,6 +19,7 @@
  
 		$count = $row['count'];
 		if($count > 0){
+			$_SESSION['uid'] = $username;
 			header('location:../../html/home.html'); // Success -> Redirecting to the home page
 		}else{
 			$_SESSION['error'] = "Invalid username or password";

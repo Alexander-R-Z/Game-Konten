@@ -12,7 +12,7 @@
 //     <li class="create-new-entety"><form>...</form></li>";
 //     for ($i = 0; $i < $count; $i++) { // create a li for each entry by $count
 //         dataGrid create a li for each entry
-//         <li class="create-new-entety"><form>...</form></li>"
+//         <li class="create-new-entety"><form>...</form></li>";
 //     }
 // echo "</ul>";
 
