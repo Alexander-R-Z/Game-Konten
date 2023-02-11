@@ -6,7 +6,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Login</title>
+        <title>SignUp</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link id="stylesheet" rel="stylesheet" href="assets/scss/dark-login.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -33,35 +33,39 @@
               </div>
             </nav>
         </header>
-          
-        <main>
+
+        <main id="signup">
             <div class="container">
                 <form method="POST" action="assets/includes/login.inc.php">
                     <div class="segment">
-                        <h1>Login</h1>
+                        <h1>SignUp</h1>
                     </div>
 
                     <label></label>
                         <input type="text" name="uid" placeholder="Username" required="required"/>
+
+                    <label></label>
+                        <input type="text" name="displayname" placeholder="Displayname" required="required"/>
                     
                     <label></label>
                         <input type="password" name="pw" placeholder="Password" required="required"/>
                     
                     <?php
-					    //checking if the session 'error' is set. Erro session is the message if the 'Username' and 'Password' is not valid.
-					    if(ISSET($_SESSION['error'])){
-				    ?>
-				    <!-- Display Login Error message -->
-					<div class="alert alert-danger"><?php echo $_SESSION['error']?></div>
-				    <?php
-					    //Unsetting the 'error' session after displaying the message.
-					    unset($_SESSION['error']);
-					    }
-				    ?>
-                    <button type="submit" class="red" name="submit"><i class="icon ion-md-lock"></i>Login</button>
+                        //checking if the session 'error' is set. Erro session is the message if the 'Username' and 'Password' is not valid.
+                        if(ISSET($_SESSION['error'])){
+                    ?>
+                    <!-- Display Login Error message -->
+                    <div class="alert alert-danger"><?php echo $_SESSION['error']?></div>
+                    <?php
+                        //Unsetting the 'error' session after displaying the message.
+                        unset($_SESSION['error']);
+                        }
+                    ?>
+                    <button type="submit" class="red" name="submit"><i class="icon ion-md-lock"></i>SignUp</button>
                 </form>
-                <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode ">Dark Mode</button>
-                
+                <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode">Dark Mode</button>
+                <button id="login-page" class="login-page-button" aria-label="login page button link">Login</button>
+
                 <?php
                     if (isset($_GET['error'])) {
                         switch ($_GET['error']) {

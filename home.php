@@ -1,8 +1,15 @@
 <!DOCTYPE html>
+<?php
+    //starting the session if not started yet
+    if(!isset($_SESSION)){session_start();}
+    if (empty($_SESSION['uid'])) {
+        header('location: index.php?error=notloggedin');
+    }
+?>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Login</title>
+        <title>SignUp</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link id="stylesheet" rel="stylesheet" href="assets/scss/dark-login.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -28,27 +35,13 @@
                 <a href="#" id="logout-btn" style="display: none;">Logout</a>
               </div>
             </nav>
-          </header>
-          
+        </header>
         <main>
-            <div class="container">
-                <form action="login.php" method="post"></form>
+            <?php
+                if(!isset($_SESSION)){session_start();}
 
-                    <div class="segment">
-                        <h1>Login</h1>
-                    </div>
-
-                    <label>
-                        <input type="text" name="username" placeholder="Username" />
-                    </label>
-                    <label>
-                        <input type="password" name="password" placeholder="Password" />
-                    </label>
-                    <button onclick="RedirectHomepage()" class="red" type="button"><i class="icon ion-md-lock"></i>Login</button>
-                </form>
-                <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode ">Dark Mode</button>
-            </div>
-            
+                echo "<h1>".$_SESSION['displayname']."</h1>";
+            ?>
         </main>
     </body>
 </html>

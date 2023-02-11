@@ -1,6 +1,9 @@
 function RedirectHomepage() {
-	location.replace('assets/html/home.html');
+	location.replace('home.php');
 }
 function RedirectLogout() {
-	location.replace('../php/sqlite/logout.inc.php');
+	location.replace('assets/includes/logout.inc.php');
+}
+function RedirectLogin() {
+	location.replace('index.php');
 }
