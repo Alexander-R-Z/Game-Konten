@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
         exit();
     }
 
-    require_once 'dbh.inc.php';
+    require_once 'db.inc.php';
     require_once 'functions.inc.php';
 
     if (emptyImputLogin($username, $pw) !== false) {

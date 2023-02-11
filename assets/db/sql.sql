@@ -18,4 +18,3 @@ INSERT INTO user (username, displayname, password)
 VALUES ('admin', 'Admin', '1');
 */
 
-

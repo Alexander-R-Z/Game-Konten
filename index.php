@@ -2,6 +2,9 @@
 <?php
     //starting the session if not started yet
     if(!isset($_SESSION)){session_start();}
+    if (isset($_SESSION['uid'])) {
+        header('location: home.php?error=loggedin');
+    }
 ?>
 <html lang="en">
     <head>
@@ -21,16 +24,20 @@
     <body>
         <header>
             <nav>
-              <h2>Game Accounts</h2>
-              <ul>
-                <li><a href="#"><span aria-hidden="true">01</span>Option 1</a></li>
-                <li><a href="#"><span aria-hidden="true">01</span>Option 2</a></li>
-                <li><a href="#"><span aria-hidden="true">01</span>Option 3</a></li>
-              </ul>
-              <div class="login-section">
-                <a href="#" id="login-btn" style="display: block;">Login</a>
-                <a href="#" id="logout-btn" style="display: none;">Logout</a>
-              </div>
+                <h2>Game Accounts</h2>
+                <ul>
+                    <li><a href="#"><span aria-hidden="true">01</span>Option 1</a></li>
+                    <li><a href="#"><span aria-hidden="true">01</span>Option 2</a></li>
+                    <li><a href="#"><span aria-hidden="true">01</span>Option 3</a></li>
+                </ul>
+                <div class="login-section">
+                <?php 
+                if (empty($_SESSION['uid'])) {
+                    echo '<a href="signup.php" id="login-btn">SignUp</a';
+                } else {
+                    echo '<a href="assets\includes\logout.inc.php" id="logout-btn">Logout</a>';
+                }?>
+                </div>
             </nav>
         </header>
           
@@ -60,7 +67,7 @@
 				    ?>
                     <button type="submit" class="red" name="submit"><i class="icon ion-md-lock"></i>Login</button>
                 </form>
-                <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode ">Dark Mode</button>
+                
                 
                 <?php
                     if (isset($_GET['error'])) {
@@ -97,6 +104,10 @@
                                 echo "<p class=\"signup_error_p\">Signup successfully</p>";
                                 break;
                                 
+                            case 'notloggedin':
+                                echo "<p class=\"signup_error_p\">Please Login</p>";
+                                break;
+
                             default:
                                 echo "<p class=\"signup_error_p\">Unknown error</p>";
                                 break;
@@ -105,5 +116,8 @@
                 ?>
             </div>
         </main>
+        <div class="theme">
+            <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode ">Dark Mode</button>
+        </div>
     </body>
 </html>

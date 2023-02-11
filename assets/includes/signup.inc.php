@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $pw = strip_tags(trim($_POST['pw']));
     $newPwHash = NULL;
 
-    require_once 'dbh.inc.php';
+    require_once 'db.inc.php';
     require_once 'functions.inc.php';
 
     if (emptyImputSignup($username, $displayname, $pw) !== false) {
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
         header("location: ../../signup.php?error=invalidPwHash");
         exit();
     }
-    if (uidExists($conn, $username) !== false) {
+    if (uidExists($db, $username) !== false) {
         header("location: ../../signup.php?error=usernametaken");
         exit();
     }

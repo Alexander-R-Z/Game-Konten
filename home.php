@@ -24,16 +24,20 @@
     <body>
         <header>
             <nav>
-              <h2>Game Accounts</h2>
-              <ul>
-                <li><a href="#"><span aria-hidden="true">01</span>Option 1</a></li>
-                <li><a href="#"><span aria-hidden="true">01</span>Option 2</a></li>
-                <li><a href="#"><span aria-hidden="true">01</span>Option 3</a></li>
-              </ul>
-              <div class="login-section">
-                <a href="#" id="login-btn" style="display: block;">Login</a>
-                <a href="#" id="logout-btn" style="display: none;">Logout</a>
-              </div>
+                <h2>Game Accounts</h2>
+                <ul>
+                    <li><a href="#"><span aria-hidden="true">01</span>Option 1</a></li>
+                    <li><a href="#"><span aria-hidden="true">01</span>Option 2</a></li>
+                    <li><a href="#"><span aria-hidden="true">01</span>Option 3</a></li>
+                </ul>
+                <div class="login-section">
+                <?php 
+                if (empty($_SESSION['uid'])) {
+                    echo '<a href="assets\includes\login.inc.php" id="login-btn">Login</a';
+                } else {
+                    ?><a href="#" id="logout-btn">Logout</a><?php
+                }?>
+                </div>
             </nav>
         </header>
         <main>

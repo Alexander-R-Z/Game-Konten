@@ -2,6 +2,9 @@
 <?php
     //starting the session if not started yet
     if(!isset($_SESSION)){session_start();}
+    if (isset($_SESSION['uid'])) {
+        header('location: home.php?error=loggedin');
+    }
 ?>
 <html lang="en">
     <head>
@@ -21,22 +24,26 @@
     <body>
         <header>
             <nav>
-              <h2>Game Accounts</h2>
-              <ul>
-                <li><a href="#"><span aria-hidden="true">01</span>Option 1</a></li>
-                <li><a href="#"><span aria-hidden="true">01</span>Option 2</a></li>
-                <li><a href="#"><span aria-hidden="true">01</span>Option 3</a></li>
-              </ul>
-              <div class="login-section">
-                <a href="#" id="login-btn" style="display: block;">Login</a>
-                <a href="#" id="logout-btn" style="display: none;">Logout</a>
-              </div>
+                <h2>Game Accounts</h2>
+                <ul>
+                    <li><a href="#"><span aria-hidden="true">01</span>Option 1</a></li>
+                    <li><a href="#"><span aria-hidden="true">01</span>Option 2</a></li>
+                    <li><a href="#"><span aria-hidden="true">01</span>Option 3</a></li>
+                </ul>
+                <div class="login-section">
+                <?php 
+                if (empty($_SESSION['uid'])) {
+                    echo '<a href="index.php" id="login-btn">Login</a';
+                } else {
+                    echo '<a href="assets\includes\logout.inc.php" id="logout-btn">Logout</a>';
+                }?>
+                </div>
             </nav>
         </header>
 
-        <main id="signup">
+        <main>
             <div class="container">
-                <form method="POST" action="assets/includes/login.inc.php">
+                <form method="POST" action="assets/includes/signup.inc.php">
                     <div class="segment">
                         <h1>SignUp</h1>
                     </div>

@@ -58,7 +58,7 @@ function invalidPwHash($pw, $newPwHash) {
     return $result;
 }
 
-function uidExists($conn, $username) {
+function uidExists($db, $username) {
 
     $db = new MyDB();
     if(!$db){
@@ -79,14 +79,6 @@ function uidExists($conn, $username) {
     $resultDB = $stmt->execute();
     var_dump($resultDB->fetchArray(SQLITE3_ASSOC));
     $row = $resultDB->fetchArray(SQLITE3_ASSOC);
-
-    // if ($row = $result->fetch_Array(SQLITE3_ASSOC)) {
-    //     return $row;
-    // }
-    // else {
-    //     $result = false;
-    //     return $result;
-    // }
     
     if ($row = $resultDB->fetchArray(SQLITE3_ASSOC)) {
         return $row;
@@ -124,25 +116,6 @@ function loginUser($db, $username, $pw) {
         header('location: ../../index.php?error=wrongloginuid'.$uidExists);
         exit();
     }
-
-    // while($row = $result->fetchArray(SQLITE3_ASSOC) ){
-    //     $id=$row['ID'];
-    //     $username=$row["USERNAME"];
-    //     $password=$row['PASSWORD'];
-    // }
-    //   if ($id!=""){
-    //       if ($password==$_POST["pwd"]){
-    //          $_SESSION["login"]=$username;
-    //          header('Location: index.php');    
-    //       }else{
-            
-    //         echo "Wrong Password";
-    //       }
-    //     }else{
-    //      echo "User not exist, please register to continue!";
-    //     }
-    //  //echo "Operation done successfully\n";
-    //  $conn->close();
 
     $pwHashed = $uidExists['password'];
     $checkPwd = password_verify($pw, $pwHashed);
