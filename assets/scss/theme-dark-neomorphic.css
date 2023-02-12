@@ -1,0 +1,125 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hwb(0 12% 88%);
+  color: hwb(0 87% 13%);
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+body header {
+  width: 100%;
+}
+body nav > ul > li:hover {
+  color: hwb(0 100% 0%);
+}
+body h1 {
+  color: hwb(0 100% 0%);
+  text-shadow: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 60px;
+  font-weight: 400;
+}
+body nav h2 {
+  margin: 0;
+  color: hwb(0 87% 13%);
+  font-family: "Open Sans", sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  text-shadow: none;
+}
+body nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-shadow: none;
+}
+body nav ul li {
+  margin-right: 10px;
+}
+body nav ul li a {
+  color: hwb(0 87% 13%);
+  text-decoration: none;
+}
+body .login-section a {
+  color: hwb(0 87% 13%);
+  text-decoration: none;
+  margin-left: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  text-shadow: none;
+}
+body p, body input, body select, body textarea, body button {
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: -0.2px;
+  font-size: 16px;
+}
+body form.login-signup {
+  padding: 16px;
+  width: 320px;
+  margin: 0 auto;
+}
+body .segment {
+  padding: 32px;
+  text-align: center;
+}
+body button, body input {
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 320px;
+  padding: 16px;
+  background-color: hwb(0 12% 88%);
+  text-shadow: 1px 1px 1px hwb(0 20% 80%);
+}
+body form.login-signup label {
+  display: block;
+  margin-bottom: 24px;
+  width: 100%;
+}
+body input {
+  box-shadow: inset 2px 2px 5px hwb(0 8% 92%), inset -5px -5px 10px hwb(0 16% 88%);
+  margin-right: 8px;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  color: hwb(0 87% 13%);
+}
+body input:focus {
+  box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 16% 88%);
+}
+body button {
+  margin-top: 35px;
+  color: hwb(0 78% 22%);
+  font-weight: bold;
+  font-weight: 600;
+  box-shadow: -5px -5px 20px hwb(0 16% 88%), 5px 5px 20px hwb(0 8% 92%);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+body Button:hover {
+  box-shadow: -2px -2px 5px hwb(0 16% 88%), 2px 2px 5px hwb(0 8% 92%);
+}
+body button:active {
+  box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 16% 88%);
+}
+body button .icon {
+  margin-right: 8px;
+}
+body button.red {
+  display: block;
+  width: 100%;
+  color: hwb(6 0% 32%);
+}/*# sourceMappingURL=theme-dark-neomorphic.css.map */

@@ -1,0 +1,159 @@
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+$h1-color: hsl(227deg 11% 74%);
+$h2-color: hwb(0 7% 93%);
+$h3-color: hwb(0 11% 89%);
+$text-color-primary: hwb(0 15% 85%);
+$text-color-secondary: hwb(227 73% 20%);
+$text-shadow: hwb(0 100% 0% / 0.85);
+$background-color-primary: hwb(228 92% 6%);
+$shadow-dark: hwb(227 73% 20%);
+$shadow-light: hwb(0 100% 0%);
+$button-red: hwb(6 0% 32%);
+$button-background-color-primary: hwb(228 92% 6%);
+
+body {
+    background-color: $background-color-primary;
+    color: $text-color-primary;
+    font-family: 'Open Sans', sans-serif;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    header {
+        width: 100%;
+    }
+    nav>ul>li:hover {
+        color: hwb(0 10% 90%);
+    }
+    h1 {
+        color: $h1-color;
+        text-shadow: none;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 60px;
+        font-weight: 600;
+    }
+    // ------------------------------------------------------------------------------------------------
+    // nav {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
+    //     padding: 10px;
+    // }
+      
+    nav h2 {
+        margin: 0;
+        color: $text-color-primary;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 40px;
+        font-weight: 500;
+        text-shadow: none;
+    }
+      
+    nav ul {
+        // display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        text-shadow: none;
+    }
+      
+    nav ul li {
+        margin-right: 10px;
+    }
+      
+    nav ul li a {
+        color: $text-color-primary;
+        text-decoration: none;
+    }
+      
+    // .login-section {
+    //     display: flex;
+    // }
+      
+    .login-section a {
+        color: $text-color-primary;
+        text-decoration: none;
+        margin-left: 10px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 26px;
+        font-weight: 500;
+        text-shadow: none;
+    }
+    // ------------------------------------------------------------------------------------------------
+    p, input, select, textarea, button {
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: -0.2px;
+        font-size: 16px;
+    }
+    form.login-signup {
+        padding: 16px;
+        width: 320px;
+        margin: 0 auto;
+    }
+    .segment {
+        padding: 32px;
+        text-align: center;
+    }
+    button, input {
+        border: 0;
+        outline: 0;
+        font-size: 16px;
+        border-radius: 320px;
+        padding: 16px;
+        background-color: $button-background-color-primary;
+        text-shadow: 1px 1px 1px $text-shadow;
+    }
+    form.login-signup label {
+        display: block;
+        margin-bottom: 24px;
+        width: 100%;
+    }
+    input {
+        box-shadow: inset 2px 2px 5px $shadow-dark, inset -5px -5px 10px $shadow-light;
+        margin-right: 8px;
+        width: 100%;
+        transition: all 0.2s ease-in-out;
+        appearance: none;
+        -webkit-appearance: none;
+        color: $text-color-primary;
+    }
+    input:focus {
+        box-shadow: inset 1px 1px 2px $shadow-dark, inset -1px -1px 2px $shadow-light;
+    }
+    button {
+        margin-top: 35px;
+        color: $text-color-primary;
+        font-weight: bold;
+        font-weight: 600;
+        box-shadow: -5px -5px 20px $shadow-light, 5px 5px 20px $shadow-dark;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+    }
+    Button:hover {
+        box-shadow: -2px -2px 5px $shadow-light, 2px 2px 5px $shadow-dark;
+    }
+    button:active {
+        box-shadow: inset 1px 1px 2px $shadow-dark, inset -1px -1px 2px $shadow-light;
+    }
+    button .icon {
+        margin-right: 8px;
+    }
+    button.red {
+        display: block;
+        width: 100%;
+        color: $button-red;
+    }
+}

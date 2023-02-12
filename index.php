@@ -7,7 +7,7 @@ require_once("assets/header/header.php");
 ?>
 <main>
     <div class="container">
-        <form method="POST" action="assets/includes/login.inc.php">
+        <form method="POST" action="assets/includes/login.inc.php" class="login-signup">
             <div class="segment">
                 <h1>Login</h1>
             </div>
@@ -79,10 +79,11 @@ require_once("assets/header/header.php");
             }
         ?>
     </div>
+    <div class="theme">
+        <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode ">Dark Mode</button>
+    </div>
 </main>
-<div class="theme">
-    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode ">Dark Mode</button>
-</div>
+
 <?php
     require_once("assets/footer/footer.php");
 ?>
