@@ -1,20 +1,19 @@
 <?php
+// define('BASE_PATH', 'D:/VSCode/Game-Konten'); // Path to the folder Game-Konten
 
 //starting the session if not started yet
 if(!isset($_SESSION)){session_start();}
-
 //check if the database file exists and create a new if not
-if(!is_file('../db/game_konten.sqlite3')){
-	file_put_contents('../db/game_konten.sqlite3', null);
+if(!is_file('../../assets/db/game_konten.sqlite3')){
+	file_put_contents('../../assets/db/game_konten.sqlite3', null);
 }
-
 // connecting the database
 // $conn = new MyDB('sqlite:../db/game_konten.sqlite3');
 class MyDB extends SQLite3
 {
     function __construct()
     {
-        $filename = '../db/game_konten.sqlite3';
+        $filename = '../../assets/db/game_konten.sqlite3';
         SQLite3::open($filename, $flags = SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);
         // $this->open('mysqlitedb.db');
     }

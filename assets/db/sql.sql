@@ -85,8 +85,8 @@ VALUES ('Admin', DATETIME('now'), 'User1', DATETIME('now'), 'User1');
 INSERT INTO Game (gameName, createDate, createdBy, changeDate, changedBy)
 VALUES ('Game1', DATETIME('now'), 'User1', DATETIME('now'), 'User1');
 
-INSERT INTO AccountData (userName, password, displayname, tagline, createDate, createdBy, changeDate, changedBy, gameId, roleId)
-VALUES ('User1', 'password1', 'Display Name 1', 'Tagline 1', DATETIME('now'), 'User1', DATETIME('now'), 'User1', 1, 1);
+INSERT INTO AccountData (userName, password, displayname, tagline, createDate, createdBy, changeDate, changedBy, gameId)
+VALUES ('User1', 'password1', 'Display Name 1', 'Tagline 1', DATETIME('now'), 'User1', DATETIME('now'), 'User1', 1);
 */
 
 

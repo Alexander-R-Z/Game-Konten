@@ -10,6 +10,8 @@
     else if (empty($_SESSION['uid'])) {
         header('location: index.php?error=notloggedin');
     }
+    $linkToTheFolderGameKonten = 'D:/VSCode/Game-Konten';
+    define('BASE_PATH', $linkToTheFolderGameKonten);
 ?>
 <html lang="en">
     <head>
@@ -30,11 +32,17 @@
         <header>
             <nav>
                 <h2><?php echo $navHeader; ?></h2>
-                <ul>
-                    <li><a href="#"><span aria-hidden="true">01</span>Option 1</a></li>
-                    <li><a href="#"><span aria-hidden="true">01</span>Option 2</a></li>
-                    <li><a href="#"><span aria-hidden="true">01</span>Option 3</a></li>
-                </ul>
+                <?php
+                if (!empty($_SESSION['uid'])) {
+                    ?>
+                    <ul>
+                        <li><a href="#"><span aria-hidden="true">01</span>Option 1</a></li>
+                        <li><a href="#"><span aria-hidden="true">01</span>Option 2</a></li>
+                        <li><a href="#"><span aria-hidden="true">01</span>Option 3</a></li>
+                    </ul>
+                    <?php
+                }
+                ?>
                 <div class="login-section">
                 <?php 
                 if (empty($_SESSION['uid'])) {

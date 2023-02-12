@@ -87,7 +87,6 @@ function uidExists($db, $username) {
         $result = false;
         return $result;
     }
-
     $stmt->close();
 }
 
@@ -107,6 +106,7 @@ function createUser($db, $username, $displayname, $newPwHash) {
     $_SESSION['uid'] = $username;
     $_SESSION['displayname'] = $displayname;
     header('location: ../../home.php?error=none');
+    $stmt->close();
     exit();
 }
 
@@ -140,6 +140,7 @@ function loginUser($db, $username, $pw) {
         $_SESSION['uid'] = $uidExists['username'];
         $_SESSION['displayname'] = $uidExists['displayname'];
         header('location: ../../home.php');
+        $stmt->close();
         exit();
     }
 }

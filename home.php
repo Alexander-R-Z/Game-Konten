@@ -2,7 +2,7 @@
 
 $title = "Home";
 $navHeader = "Game Accounts";
-require_once("assets/header/header.php");
+require_once('assets/header/header.php');
 
 ?>
 <main>
@@ -18,28 +18,31 @@ require_once("assets/header/header.php");
 
                 
                 <?php
-                    include_once("assets/includes/db.inc.php");
-                    
-                    $count = 3;
+                    // require_once(BASE_PATH . '/assets/includes/db.inc.php');
+                    // require_once(BASE_PATH . '/assets/includes/account-data.inc.php');
+                    // $games = GameDbEntrys($db);
+                    // var_dump($games);
+                    // $count = countAccountDbEntrys($db, $gameId);
+                    $count = 0;
                     for ($i = 0; $i < $count; $i++) { ?>
 
                     <div class="account-login-data">
                         <form>
                             <div class="lable-input">
                                 <label for="username">Username</label>
-                                <input type="text" name="username" placeholder="Username" required="required" value="<?php echo $username;?>"/>
+                                <input type="text" name="username" placeholder="Username" required="required" <?php echo "value=\"$username\";"?>/>
                             </div>
                             <div class="lable-input">
                                 <label for="password">Password</label>
-                                <input type="text" name="password" placeholder="Password" required="required" value="<?php echo $password;?>"/>
+                                <input type="text" name="password" placeholder="Password" required="required" <?php echo "value=\"$password\";"?>/>
                             </div>
                             <div class="lable-input">
                                 <label for="displayname">Displayname</label>
-                                <input type="text" name="displayname" placeholder="Displayname" value="<?php echo $displayname;?>"/>
+                                <input type="text" name="displayname" placeholder="Displayname" <?php echo "value=\"$displayname\";"?>/>
                             </div>
                             <div class="lable-input">
                                 <label for="tag">Tag</label>
-                                <input type="text" name="tag" placeholder="7FJ3D" value="<?php echo $tag;?>"/>
+                                <input type="text" name="tag" placeholder="7FJ3D" <?php echo "value=\"$tag\";"?>/>
                             </div>
                         </form>
                     </div>
@@ -56,5 +59,5 @@ require_once("assets/header/header.php");
     <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode "><i class="icon ion-md-moon"></i></button>
 </main>
 <?php
-    require_once("assets/footer/footer.php");
+    require_once(BASE_PATH . '/assets/footer/footer.php');
 ?>
