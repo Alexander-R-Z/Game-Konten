@@ -60,12 +60,12 @@ function invalidPwHash($pw, $newPwHash) {
 
 function uidExists($db, $username) {
 
-    $db = new MyDB();
-    if(!$db){
-        echo $db->lastErrorMsg();
-    } else {
-        echo "Opened database successfully\n";
-    }
+    // $db = new MyDB();
+    // if(!$db){
+    //     echo $db->lastErrorMsg();
+    // } else {
+    //     echo "Opened database successfully\n";
+    // }
 
     $sql = "SELECT * FROM `user` WHERE `username` = :username";
     $stmt = $db->prepare($sql);
@@ -92,7 +92,8 @@ function uidExists($db, $username) {
 }
 
 function createUser($db, $username, $displayname, $newPwHash) {
-    $sql = "INSERT INTO `user` (username, displayname, password) VALUES (:username, :displayname, :password)";
+
+    $sql = "INSERT INTO User (username, displayname, password, createDate, changeDate, lastLoginDate) VALUES (:username, :displayname, :password, datetime('now'), datetime('now'), datetime('now'));";
     $stmt = $db->prepare($sql);
     if (!$stmt) {
         header('location: ../../signup.php?error=stmtfailed');
@@ -125,6 +126,16 @@ function loginUser($db, $username, $pw) {
         exit();
     }
     if ($checkPwd === true) {
+        $sql = "UPDATE User SET lastLoginDate = datetime('now') WHERE username = :username AND password = :password;";
+        $stmt = $db->prepare($sql);
+        if (!$stmt) {
+            header('location: ../../signup.php?error=stmtfailed');
+            exit();
+        }
+
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $pwHashed);
+        $stmt->execute();
         session_start();
         $_SESSION['uid'] = $uidExists['username'];
         $_SESSION['displayname'] = $uidExists['displayname'];
