@@ -80,7 +80,7 @@ require_once("assets/header/header.php");
         ?>
     </div>
     <div class="theme">
-        <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode ">Dark Mode</button>
+        <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode "><i class="icon ion-md-moon"></i></button>
     </div>
 </main>
 

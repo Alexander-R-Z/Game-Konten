@@ -20,25 +20,38 @@
 header {
     width: 100%;
     color: var(--text-color);
-  }
-  
-  nav {
+    backdrop-filter: blur(5px);
+    min-height: 5em;
+    z-index: 9001;
+}
+footer {
+    width: 100%;
+    min-height: 5em;
+    color: var(--text-color);
+    z-index: 9000;
+}
+div.container {
+    margin-top: 10em;
+}
+
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-  }
-  
-  nav h2 {
+    z-index: 9002;
+}
+
+nav h2 {
     margin: 0;
     color: var(--text-color);
     font-family: 'Open Sans', sans-serif;
     font-size: 40px;
     font-weight: 500;
     text-shadow: none;
-  }
-  
-  nav ul {
+}
+
+nav ul {
     display: flex;
     list-style: none;
     margin: 0;
@@ -47,22 +60,23 @@ header {
     font-size: 20px;
     font-weight: 400;
     text-shadow: none;
-  }
-  
-  nav ul li {
+    gap: 2em;
+}
+
+nav ul li {
     margin-right: 10px;
-  }
-  
-  nav ul li a {
+}
+
+nav ul li a {
     color: var(--text-color);
     text-decoration: none;
-  }
-  
+}
+
   .login-section {
     display: flex;
-  }
-  
-  .login-section a {
+}
+
+.login-section a {
     color: var(--text-color);
     text-decoration: none;
     margin-left: 10px;
@@ -70,10 +84,23 @@ header {
     font-size: 26px;
     font-weight: 500;
     text-shadow: none;
-  }
-  
+}
+
 
 /* Header End */
+
+#dark-mode-toggle {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 
 /* Login Page Start */
 
@@ -83,16 +110,24 @@ body, html {
     line-height: 1.5;
     color: #333;
     background-color: var(--secondary-color);
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
 }
 
 main {
+    position: relative;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: -0.2px;
     font-size: 16px;
     color: var(--primary-color);
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 h1 {
@@ -120,7 +155,7 @@ form {
 }
 
 .segment {
-    padding: 32px;
+    padding: 0px 0px 32px 0px;
     text-align: center;
 }
 

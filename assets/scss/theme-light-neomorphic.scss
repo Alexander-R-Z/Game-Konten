@@ -31,6 +31,20 @@ body {
 
     header {
         width: 100%;
+        backdrop-filter: blur(5px);
+        min-height: 5em;
+        z-index: 9001;
+    }
+    nav {
+        z-index: 9002;
+    }
+    main {
+        min-height: 20em;
+    }
+    footer {
+        width: 100%;
+        min-height: 5em;
+        z-index: 9000;
     }
     nav>ul>li:hover {
         color: hwb(0 10% 90%);

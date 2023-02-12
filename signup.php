@@ -34,8 +34,7 @@ require_once("assets/header/header.php");
             ?>
             <button type="submit" class="red" name="submit"><i class="icon ion-md-lock"></i>SignUp</button>
         </form>
-        <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode">Dark Mode</button>
-        <button id="login-page" class="login-page-button" aria-label="login page button link">Login</button>
+        <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode "><i class="icon ion-md-moon"></i></button>
 
         <?php
             if (isset($_GET['error'])) {
