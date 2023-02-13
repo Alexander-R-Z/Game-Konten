@@ -8,19 +8,22 @@ require_once("assets/header/header.php");
 <main>
     <div class="container">
         <form method="POST" action="assets/includes/signup.inc.php" class="login-signup">
-            <div class="segment">
+            <div class="segment form-group-login">
                 <h1>SignUp</h1>
             </div>
-
-            <label></label>
+            <div class="form-group-login">
                 <input type="text" name="uid" placeholder="Username" required="required"/>
-
-            <label></label>
+            </div>
+            <div class="form-group-login">
                 <input type="text" name="displayname" placeholder="Displayname" required="required"/>
-            
-            <label></label>
+            </div>
+            <div class="form-group-login">
                 <input type="password" name="pw" placeholder="Password" required="required"/>
-            
+            </div>
+            <div class="form-group-login">
+                <button type="submit" class="red" name="submit"><i class="icon ion-md-lock"></i>SignUp</button>
+            </div>
+            <div class="form-group-login">
             <?php
                 //checking if the session 'error' is set. Erro session is the message if the 'Username' and 'Password' is not valid.
                 if(ISSET($_SESSION['error'])){
@@ -32,9 +35,8 @@ require_once("assets/header/header.php");
                 unset($_SESSION['error']);
                 }
             ?>
-            <button type="submit" class="red" name="submit"><i class="icon ion-md-lock"></i>SignUp</button>
+            </div>
         </form>
-        <button id="theme-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode "><i class="icon ion-md-moon"></i></button>
 
         <?php
             if (isset($_GET['error'])) {
@@ -77,6 +79,9 @@ require_once("assets/header/header.php");
                 }
             }
         ?>
+    </div>
+    <div class="theme">
+        <button id="theme-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode "><i class="icon ion-md-moon"></i></button>
     </div>
 </main>
 <?php
