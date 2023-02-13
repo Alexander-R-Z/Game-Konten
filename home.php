@@ -6,11 +6,6 @@ require_once('assets/header/header.php');
 
 ?>
 <main>
-    <?php
-        if(!isset($_SESSION)){session_start();}
-
-        echo "<h3>".$_SESSION['displayname']."</h3>";
-    ?>
     <div class="game-accounts">
     <h1>Accounts</h1>
             <section>
@@ -56,7 +51,9 @@ require_once('assets/header/header.php');
         ?>
     </div>
 
-    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode "><i class="icon ion-md-moon"></i></button>
+    <div class="theme">
+        <button id="theme-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode "><i class="icon ion-md-moon"></i></button>
+    </div>
 </main>
 <?php
     require_once(BASE_PATH . '/assets/footer/footer.php');

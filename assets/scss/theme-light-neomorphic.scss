@@ -36,12 +36,19 @@ body {
         z-index: 9001;
     }
     nav {
+        width: 100%;
+        // border: 1px solid red; // temporary
         z-index: 9002;
+        display: flex;
+        gap: 1rem;
     }
     main {
+        position: relative;
+        // border: 1px solid blue; // temporary
         min-height: 20em;
     }
     footer {
+        // border: 1px solid red; // temporary
         width: 100%;
         min-height: 5em;
         z-index: 9000;
@@ -49,21 +56,93 @@ body {
     nav>ul>li:hover {
         color: hwb(0 10% 90%);
     }
+    .flex {
+        display: flex;
+        gap: clamp(0rem, 4vw, 6rem);
+    }
     h1 {
         color: $h1-color;
         text-shadow: none;
         font-family: 'Open Sans', sans-serif;
         font-size: 60px;
         font-weight: 600;
+        cursor: default;
+    }
+    form.login-signup {
+        display: grid;
+        gap: 1.5rem;
+    }
+    div.form-group-login {
+        display: grid;
+        text-align: center;
     }
     // ------------------------------------------------------------------------------------------------
-    // nav {
-    //     display: flex;
-    //     justify-content: space-between;
-    //     align-items: center;
-    //     padding: 10px;
+    // ------------------------------------ new styles ------------------------------------
+    // Video https://youtu.be/HbBMp6yUXO0?t=1237
+    // .primary-navigation {
     // }
-      
+    header.primary-header>nav.flex:first-child {
+        min-width: 1319px;
+    }
+    header.primary-header>nav {
+        justify-content: space-between;
+        align-items: center;
+        .nav-header {
+            margin: 2rem;
+            text-overflow: initial;
+        }
+        .button-login-signup-logout {
+            display: block;
+            text-align: right;
+            margin-right: 2rem;
+        }
+        .primary-navigation {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .primary-navigation a {
+            text-decoration: none;
+        }
+        .primary-navigation a > [aria-hidden="true"] {
+            font-weight: 700;
+            margin-inline-end: .75em;
+        }
+        // @media (min-width: 82.625em) {
+        //    .primary-navigation a > [aria-hidden="true"] {
+        //         font-weight: 700;
+        //         margin-inline-end: .75em;
+        //     }
+        // }
+        // @media (max-width: 82.625em) {
+        //     .primary-navigation a > [aria-hidden="true"] {
+        //         display: none;
+        //     }
+        // }
+        div.login-section {
+            h3.h3-username {
+                text-align: right;
+                margin-right: 2rem;
+            }
+        }
+    }
+    // @media (max-width: 35em) { // Video https://youtu.be/HbBMp6yUXO0?t=1237
+    //     header.primary-header>nav {
+    //         .primary-navigation {
+    //             position: fixed;
+    //             inset: 0 0 0 30%;
+    //             min-height: 100vh;
+    //             min-height: 100dvh;
+
+    //             flex-direction: column;
+    //             padding: min(30vh, 10rem) 2em;
+
+    //             background: hsla(0, 0%, 100%, 0.2);
+    //             backdrop-filter: blur(.75rem);
+    //         }
+    //     }
+    // }
+
     nav h2 {
         margin: 0;
         color: $text-color-primary;
@@ -72,9 +151,7 @@ body {
         font-weight: 500;
         text-shadow: none;
     }
-      
     nav ul {
-        // display: flex;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -83,24 +160,16 @@ body {
         font-weight: 400;
         text-shadow: none;
     }
-      
     nav ul li {
         margin-right: 10px;
     }
-      
     nav ul li a {
         color: $text-color-primary;
         text-decoration: none;
     }
-      
-    // .login-section {
-    //     display: flex;
-    // }
-      
     .login-section a {
         color: $text-color-primary;
         text-decoration: none;
-        margin-left: 10px;
         font-family: 'Open Sans', sans-serif;
         font-size: 26px;
         font-weight: 500;
@@ -115,11 +184,10 @@ body {
     form.login-signup {
         padding: 16px;
         width: 320px;
-        margin: 0 auto;
+        margin: 4em auto;
     }
     .segment {
-        padding: 32px;
-        text-align: center;
+        margin-bottom: 2em;
     }
     button, input {
         border: 0;
@@ -130,15 +198,8 @@ body {
         background-color: $button-background-color-primary;
         text-shadow: 1px 1px 1px $text-shadow;
     }
-    form.login-signup label {
-        display: block;
-        margin-bottom: 24px;
-        width: 100%;
-    }
     input {
         box-shadow: inset 2px 2px 5px $shadow-dark, inset -5px -5px 10px $shadow-light;
-        margin-right: 8px;
-        width: 100%;
         transition: all 0.2s ease-in-out;
         appearance: none;
         -webkit-appearance: none;
@@ -148,7 +209,6 @@ body {
         box-shadow: inset 1px 1px 2px $shadow-dark, inset -1px -1px 2px $shadow-light;
     }
     button {
-        margin-top: 35px;
         color: $text-color-primary;
         font-weight: bold;
         font-weight: 600;
@@ -166,8 +226,21 @@ body {
         margin-right: 8px;
     }
     button.red {
-        display: block;
-        width: 100%;
+        margin-top: 1em;
         color: $button-red;
+    }
+    #dark-mode-toggle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    div.theme {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
     }
 }

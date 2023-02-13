@@ -1,15 +1,15 @@
 let currentTheme = localStorage.getItem('theme'); // Get Dark Mode from Local Storage
-const darkModeToggle = document.querySelector('#dark-mode-toggle'); // Dark Mode Toggle Button ID
+const darkModeToggle = document.querySelector('#theme-toggle'); // Dark Mode Toggle Button ID
 
 const enableDarkMode = () => {
 	// Enable Dark Mode Function
-	document.getElementById('stylesheet').setAttribute('href', 'assets/scss/dark-login.css'); // Add Dark Mode Class to Body
+	document.getElementById('stylesheet').setAttribute('href', 'assets/scss/theme-dark-neomorphic.css'); // Add Dark Mode Class to Body
 	localStorage.setItem('theme', 'darkmode'); // Set Dark Mode to Enabled in Local Storage
 }; // End Enable Dark Mode
 
 const disableDarkMode = () => {
 	// Disable Dark Mode Function
-	document.getElementById('stylesheet').setAttribute('href', 'assets/scss/light-login.css'); // Add Dark Mode Class to Body // Remove Dark Mode Class from Body
+	document.getElementById('stylesheet').setAttribute('href', 'assets/scss/theme-light-neomorphic.css'); // Add Dark Mode Class to Body // Remove Dark Mode Class from Body
 	localStorage.setItem('theme', null); // Set Dark Mode to Null in Local Storage
 }; // End Disable Dark Mode
 

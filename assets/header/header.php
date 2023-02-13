@@ -18,27 +18,28 @@
         <meta charset="utf-8" />
         <title><?php echo $title; ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link id="stylesheet" rel="stylesheet" href="assets/scss/dark-login.css" />
+        <link id="stylesheet" rel="stylesheet" href="assets/scss/theme-light-neomorphic.css " />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         <link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
         <script src="assets/js/main.js"></script>
-        <script src="assets/js/darkmode.js" defer></script>
+        <script src="assets/js/theme.js" defer></script>
         <script src="assets/js/nav-login.out.js" defer></script>
     </head>
     <body>
-        <header>
-            <nav>
-                <h2><?php echo $navHeader; ?></h2>
+        <header class="primary-header flex">
+            <nav class="flex">
+                <h2 class="nav-header"><?php echo $navHeader; ?></h2>
                 <?php
                 if (!empty($_SESSION['uid'])) {
                     ?>
-                    <ul>
-                        <li><a href="#"><span aria-hidden="true">01</span>Option 1</a></li>
-                        <li><a href="#"><span aria-hidden="true">01</span>Option 2</a></li>
-                        <li><a href="#"><span aria-hidden="true">01</span>Option 3</a></li>
+                    <ul class="primary-navigation flex">
+                        <li class="active"><a href="#"><span aria-hidden="true">00</span>Home</a></li>
+                        <li><a href="#"><span aria-hidden="true">01</span>Destination</a></li>
+                        <li><a href="#"><span aria-hidden="true">02</span>Crew</a></li>
+                        <li><a href="#"><span aria-hidden="true">03</span>Technology</a></li>
                     </ul>
                     <?php
                 }
@@ -47,14 +48,15 @@
                 <?php 
                 if (empty($_SESSION['uid'])) {
                     if ($title == "Login") {
-                        echo '<a href="signup.php" id="login-btn">SignUp</a';
+                        echo '<a href="signup.php"  id="login-btn" class="button-login-signup-logout">SignUp</a';
                     } else if ($title == "SignUp") {
-                        echo '<a href="index.php" id="login-btn">Login</a';
+                        echo '<a href="index.php" id="login-btn" class="button-login-signup-logout">Login</a';
                     } else {
-                        echo '<a href="index.php" id="login-btn">Login</a';
+                        echo '<a href="index.php" id="login-btn" class="button-login-signup-logout">Login</a';
                     }
                 } else {
-                    ?><a href="#" id="logout-btn">Logout</a><?php
+                    echo "<h3 class=\"h3-username\">".$_SESSION['displayname']."</h3>";
+                    ?><a href="#" id="logout-btn" class="button-login-signup-logout">Logout</a><?php
                 }?>
                 </div>
             </nav>

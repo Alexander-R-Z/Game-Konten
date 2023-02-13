@@ -21,9 +21,13 @@ body header {
   z-index: 9001;
 }
 body nav {
+  width: 100%;
   z-index: 9002;
+  display: flex;
+  gap: 1rem;
 }
 body main {
+  position: relative;
   min-height: 20em;
 }
 body footer {
@@ -34,12 +38,58 @@ body footer {
 body nav > ul > li:hover {
   color: hwb(0 10% 90%);
 }
+body .flex {
+  display: flex;
+  gap: clamp(0rem, 4vw, 6rem);
+}
 body h1 {
   color: hsl(227deg, 11%, 74%);
   text-shadow: none;
   font-family: "Open Sans", sans-serif;
   font-size: 60px;
   font-weight: 600;
+  cursor: default;
+}
+body form.login-signup {
+  display: grid;
+  gap: 1.5rem;
+}
+body div.form-group-login {
+  display: grid;
+  text-align: center;
+}
+body header.primary-header > nav.flex:first-child {
+  min-width: 1319px;
+}
+body header.primary-header > nav {
+  justify-content: space-between;
+  align-items: center;
+}
+body header.primary-header > nav .nav-header {
+  margin: 2rem;
+  text-overflow: initial;
+}
+body header.primary-header > nav .button-login-signup-logout {
+  display: block;
+  text-align: right;
+  margin-right: 2rem;
+}
+body header.primary-header > nav .primary-navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+body header.primary-header > nav .primary-navigation a {
+  text-decoration: none;
+}
+body header.primary-header > nav .primary-navigation a > [aria-hidden=true] {
+  font-weight: 700;
+  -webkit-margin-end: 0.75em;
+          margin-inline-end: 0.75em;
+}
+body header.primary-header > nav div.login-section h3.h3-username {
+  text-align: right;
+  margin-right: 2rem;
 }
 body nav h2 {
   margin: 0;
@@ -68,7 +118,6 @@ body nav ul li a {
 body .login-section a {
   color: hwb(0 15% 85%);
   text-decoration: none;
-  margin-left: 10px;
   font-family: "Open Sans", sans-serif;
   font-size: 26px;
   font-weight: 500;
@@ -82,11 +131,10 @@ body p, body input, body select, body textarea, body button {
 body form.login-signup {
   padding: 16px;
   width: 320px;
-  margin: 0 auto;
+  margin: 4em auto;
 }
 body .segment {
-  padding: 32px;
-  text-align: center;
+  margin-bottom: 2em;
 }
 body button, body input {
   border: 0;
@@ -97,15 +145,8 @@ body button, body input {
   background-color: hwb(228 92% 6%);
   text-shadow: 1px 1px 1px hwb(0 100% 0%/0.85);
 }
-body form.login-signup label {
-  display: block;
-  margin-bottom: 24px;
-  width: 100%;
-}
 body input {
   box-shadow: inset 2px 2px 5px hwb(227 73% 20%), inset -5px -5px 10px hwb(0 100% 0%);
-  margin-right: 8px;
-  width: 100%;
   transition: all 0.2s ease-in-out;
   -moz-appearance: none;
        appearance: none;
@@ -116,7 +157,6 @@ body input:focus {
   box-shadow: inset 1px 1px 2px hwb(227 73% 20%), inset -1px -1px 2px hwb(0 100% 0%);
 }
 body button {
-  margin-top: 35px;
   color: hwb(0 15% 85%);
   font-weight: bold;
   font-weight: 600;
@@ -134,7 +174,20 @@ body button .icon {
   margin-right: 8px;
 }
 body button.red {
-  display: block;
-  width: 100%;
+  margin-top: 1em;
   color: hwb(6 0% 32%);
+}
+body #dark-mode-toggle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+body div.theme {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
 }/*# sourceMappingURL=theme-light-neomorphic.css.map */
