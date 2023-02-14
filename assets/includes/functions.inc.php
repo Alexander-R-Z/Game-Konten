@@ -59,14 +59,6 @@ function invalidPwHash($pw, $newPwHash) {
 }
 
 function uidExists($db, $username) {
-
-    // $db = new MyDB();
-    // if(!$db){
-    //     echo $db->lastErrorMsg();
-    // } else {
-    //     echo "Opened database successfully\n";
-    // }
-
     $sql = "SELECT * FROM `user` WHERE `username` = :username";
     $stmt = $db->prepare($sql);
     if (!$stmt) {
@@ -114,7 +106,7 @@ function loginUser($db, $username, $pw) {
     $uidExists = uidExists($db, $username);
 
     if ($uidExists === false) {
-        header('location: ../../index.php?error=wrongloginuid'.$uidExists);
+        header('location: ../../index.php?error=wrongloginuid');
         exit();
     }
 
