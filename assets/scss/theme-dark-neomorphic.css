@@ -29,6 +29,7 @@ body nav {
 body main {
   position: relative;
   min-height: 20em;
+  margin: 0 2rem 0 2rem;
 }
 body footer {
   width: 100%;
