@@ -168,7 +168,7 @@ body button, body input {
   text-shadow: 1px 1px 1px hwb(0 20% 80%);
 }
 body input {
-  box-shadow: inset 2px 2px 5px hwb(0 8% 92%), inset -5px -5px 10px hwb(0 16% 88%);
+  box-shadow: inset 2px 2px 5px hwb(0 8% 92%), inset -5px -5px 10px hwb(0 15% 85%);
   transition: all 0.2s ease-in-out;
   -moz-appearance: none;
        appearance: none;
@@ -176,21 +176,21 @@ body input {
   color: hwb(0 87% 13%);
 }
 body input:focus {
-  box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 16% 88%);
+  box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 15% 85%);
 }
 body button {
   color: hwb(0 87% 13%);
   font-weight: bold;
   font-weight: 600;
-  box-shadow: -5px -5px 20px hwb(0 16% 88%), 5px 5px 20px hwb(0 8% 92%);
+  box-shadow: -5px -5px 20px hwb(0 15% 85%), 5px 5px 20px hwb(0 8% 92%);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 body Button:hover {
-  box-shadow: -2px -2px 5px hwb(0 16% 88%), 2px 2px 5px hwb(0 8% 92%);
+  box-shadow: -2px -2px 5px hwb(0 15% 85%), 2px 2px 5px hwb(0 8% 92%);
 }
 body button:active {
-  box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 16% 88%);
+  box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 15% 85%);
 }
 body button .icon {
   margin-right: 8px;
@@ -281,13 +281,13 @@ body main form.account-login-data-form .account-login-data-div {
   margin: 1rem;
   border-radius: 1em;
   padding: 5rem 3rem 6.5rem 3rem;
-  box-shadow: -5px -5px 20px hwb(0 16% 88%), 5px 5px 20px hwb(0 8% 92%);
+  box-shadow: -5px -5px 20px hwb(0 15% 85%), 5px 5px 20px hwb(0 8% 92%);
 }
 body main form.account-login-data-form .account-login-data-div:hover {
-  box-shadow: -2px -2px 5px hwb(0 16% 88%), 2px 2px 5px hwb(0 8% 92%);
+  box-shadow: -2px -2px 5px hwb(0 15% 85%), 2px 2px 5px hwb(0 8% 92%);
 }
 body main form.account-login-data-form .account-login-data-div:focus {
-  box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 16% 88%);
+  box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 15% 85%);
 }
 body main form.account-login-data-form .lable-input {
   display: grid;
