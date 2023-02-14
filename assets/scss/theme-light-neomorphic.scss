@@ -48,7 +48,7 @@ body {
         position: relative;
         // border: 1px solid blue; // temporary
         min-height: 20em;
-        margin: 0 2rem 0 2rem;
+        margin: 0 2rem;
     }
     footer {
         // border: 1px solid red; // temporary
@@ -91,7 +91,7 @@ body {
         justify-content: space-between;
         align-items: center;
         .nav-header {
-            margin: 2rem;
+            margin: 2rem 0 2rem 2rem;
             text-overflow: initial;
         }
         .button-login-signup-logout {
@@ -249,34 +249,60 @@ body {
 }
 
 // Adaptive grid with a max column count
-
-.grid-container {
-    gap: 0em;
-    display: grid;
-    grid-auto-flow: column;
+@media (min-width: 100rem) {
+    .grid-container {
+        display: grid;
+        grid-auto-flow: column;
+    }
+    @for $i from 1 through $homeMaxColumnCount {
+        .grid-item:nth-child(#{$homeMaxColumnCount}n + #{$i}) {
+            grid-column: #{$i};
+        }
+    }
 }
-@for $i from 1 through $homeMaxColumnCount {
-    .grid-item:nth-child(#{$homeMaxColumnnCount}n + #{$i}) {
-        grid-column: #{$i};
+// @media (max-width: 100rem) and (min-width: 82.813rem) {
+@media (max-width: 100rem) {
+    .grid-container {
+        display: grid;
+        grid-auto-flow: column;
+    }
+    @for $i from 1 through 3 {
+        .grid-item:nth-child(3n + #{$i}) {
+            grid-column: #{$i};
+        }
     }
 }
 
 // Home Page
-
+body main.home {
+    display: grid;
+    justify-content: center;
+}
 body main {
+    .game-accounts {
+        max-width: 120rem;
+    }
+    .game-accounts-head {
+        display: flex;
+        justify-content: center;
+    }
+    .valorant {
+        margin-top: 4em;
+        margin-bottom: 2em;
+    }
     form.account-login-data-form {
-        display:grid;
+        display: grid;
         justify-content: center;
         align-items: center;
         gap: 1rem;
         border-radius: 1em;
         .account-login-data-div {
-            display:grid;
+            display: grid;
             justify-content: center;
-            gap: 1rem;
+            gap: 1em;
             margin: 1rem;
             border-radius: 1em;
-            padding: 5rem;
+            padding: 5rem 3rem;
             box-shadow: -5px -5px 20px $shadow-light, 5px 5px 20px $shadow-dark;
         }
         .account-login-data-div:hover {
@@ -292,5 +318,23 @@ body main {
             font-weight: 600;
             letter-spacing: .5px;
         }
+    }
+    .account-data-input {
+        position: relative;
+        padding-right: 3rem;
+    }
+    .input-copy {
+        position: absolute;
+        top: 18px;
+        right: 22px;
+    }
+    .copy-to-clipboard-helper {
+        position: relative;
+    }
+    .button-copy {
+        background: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
     }
 }

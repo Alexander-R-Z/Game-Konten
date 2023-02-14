@@ -29,7 +29,7 @@ body nav {
 body main {
   position: relative;
   min-height: 20em;
-  margin: 0 2rem 0 2rem;
+  margin: 0 2rem;
 }
 body footer {
   width: 100%;
@@ -67,7 +67,7 @@ body header.primary-header > nav {
   align-items: center;
 }
 body header.primary-header > nav .nav-header {
-  margin: 2rem;
+  margin: 2rem 0 2rem 2rem;
   text-overflow: initial;
 }
 body header.primary-header > nav .button-login-signup-logout {
@@ -191,4 +191,104 @@ body div.theme {
   position: absolute;
   bottom: 10px;
   left: 10px;
+}
+
+@media (min-width: 100rem) {
+  .grid-container {
+    display: grid;
+    grid-auto-flow: column;
+  }
+  .grid-item:nth-child(4n+1) {
+    grid-column: 1;
+  }
+  .grid-item:nth-child(4n+2) {
+    grid-column: 2;
+  }
+  .grid-item:nth-child(4n+3) {
+    grid-column: 3;
+  }
+  .grid-item:nth-child(4n+4) {
+    grid-column: 4;
+  }
+}
+@media (max-width: 100rem) {
+  .grid-container {
+    display: grid;
+    grid-auto-flow: column;
+  }
+  .grid-item:nth-child(3n+1) {
+    grid-column: 1;
+  }
+  .grid-item:nth-child(3n+2) {
+    grid-column: 2;
+  }
+  .grid-item:nth-child(3n+3) {
+    grid-column: 3;
+  }
+}
+body main.home {
+  display: grid;
+  justify-content: center;
+}
+
+body main .game-accounts {
+  max-width: 120rem;
+}
+body main .game-accounts-head {
+  display: flex;
+  justify-content: center;
+}
+body main .valorant {
+  margin-top: 4em;
+  margin-bottom: 2em;
+}
+body main #valo {
+  filter: invert(1);
+}
+body main form.account-login-data-form {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 1em;
+}
+body main form.account-login-data-form .account-login-data-div {
+  display: grid;
+  justify-content: center;
+  gap: 1em;
+  margin: 1rem;
+  border-radius: 1em;
+  padding: 5rem 3rem;
+  box-shadow: -5px -5px 20px hwb(0 16% 88%), 5px 5px 20px hwb(0 8% 92%);
+}
+body main form.account-login-data-form .account-login-data-div:hover {
+  box-shadow: -2px -2px 5px hwb(0 16% 88%), 2px 2px 5px hwb(0 8% 92%);
+}
+body main form.account-login-data-form .account-login-data-div:focus {
+  box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 16% 88%);
+}
+body main form.account-login-data-form .lable-input {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+body main .account-data-input {
+  position: relative;
+  padding-right: 3rem;
+}
+body main .input-copy {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+}
+body main .copy-to-clipboard-helper {
+  position: relative;
+}
+body main .button-copy {
+  background: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
 }/*# sourceMappingURL=theme-dark-neomorphic.css.map */
