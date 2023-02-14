@@ -37,9 +37,9 @@
                     ?>
                     <ul class="primary-navigation flex">
                         <li class="active"><a href="#"><span aria-hidden="true">00</span>Home</a></li>
-                        <li><a href="#"><span aria-hidden="true">01</span>Destination</a></li>
-                        <li><a href="#"><span aria-hidden="true">02</span>Crew</a></li>
-                        <li><a href="#"><span aria-hidden="true">03</span>Technology</a></li>
+                        <li><a href="#"><span aria-hidden="true">01</span>Roles</a></li>
+                        <li><a href="#"><span aria-hidden="true">02</span>Games</a></li>
+                        <li><a href="#"><span aria-hidden="true">03</span>User</a></li>
                     </ul>
                     <?php
                 }
