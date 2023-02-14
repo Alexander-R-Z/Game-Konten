@@ -291,6 +291,7 @@ body main {
     #valo {filter: invert(1);
     }
     form.account-login-data-form {
+        position: relative;
         display: grid;
         justify-content: center;
         align-items: center;
@@ -302,7 +303,7 @@ body main {
             gap: 1em;
             margin: 1rem;
             border-radius: 1em;
-            padding: 5rem 3rem;
+            padding: 5rem 3rem 6.5rem 3rem;
             box-shadow: -5px -5px 20px $shadow-light, 5px 5px 20px $shadow-dark;
         }
         .account-login-data-div:hover {
@@ -336,5 +337,19 @@ body main {
         box-shadow: none;
         margin: 0;
         padding: 0;
+    }
+    .edit-button {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+        background: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+    .edit-button img {
+        height: 1.5em;
+        width: auto;
+        filter: invert(1);
     }
 }

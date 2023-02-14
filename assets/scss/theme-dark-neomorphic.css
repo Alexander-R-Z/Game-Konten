@@ -246,6 +246,7 @@ body main #valo {
   filter: invert(1);
 }
 body main form.account-login-data-form {
+  position: relative;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -258,7 +259,7 @@ body main form.account-login-data-form .account-login-data-div {
   gap: 1em;
   margin: 1rem;
   border-radius: 1em;
-  padding: 5rem 3rem;
+  padding: 5rem 3rem 6.5rem 3rem;
   box-shadow: -5px -5px 20px hwb(0 16% 88%), 5px 5px 20px hwb(0 8% 92%);
 }
 body main form.account-login-data-form .account-login-data-div:hover {
@@ -291,4 +292,18 @@ body main .button-copy {
   box-shadow: none;
   margin: 0;
   padding: 0;
+}
+body main .edit-button {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  background: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+body main .edit-button img {
+  height: 1.5em;
+  width: auto;
+  filter: invert(1);
 }/*# sourceMappingURL=theme-dark-neomorphic.css.map */

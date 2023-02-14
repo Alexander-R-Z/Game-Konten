@@ -20,11 +20,12 @@ require_once('assets/header/header.php');
                     // $games = GameDbEntrys($db);
                     // var_dump($games);
                     // $count = countAccountDbEntrys($db, $gameId);
-                    $count = 9;
+                    $count = 15;
                     for ($i = 0; $i < $count; $i++) { ?>
 
                     <form class="account-login-data-form grid-item">
                         <div class="account-login-data-div">
+                            <button class="edit-button"><img src="assets/img/edit.png" alt=""></button>
                             <div class="lable-input">
                                 <label for="username">Username</label>
                                 <div class="copy-to-clipboard-helper">
@@ -77,3 +78,11 @@ require_once('assets/header/header.php');
 <?php
     require_once(BASE_PATH . '/assets/footer/footer.php');
 ?>
+<script>
+    function copyToClipboard(text) {
+        const button = event.target;
+        const input = button.closest('.copy-to-clipboard-helper').querySelector('input');
+        input.select();
+        document.execCommand('copy');
+    }
+</script>

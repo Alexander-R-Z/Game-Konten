@@ -30,8 +30,8 @@
     </head>
     <body>
         <header class="primary-header flex">
+            <h2 class="nav-header"><?php echo $navHeader; ?></h2>
             <nav class="flex">
-                <h2 class="nav-header"><?php echo $navHeader; ?></h2>
                 <?php
                 if (!empty($_SESSION['uid'])) {
                     ?>
@@ -44,7 +44,8 @@
                     <?php
                 }
                 ?>
-                <div class="login-section">
+            </nav>
+            <div class="login-section">
                 <?php 
                 if (empty($_SESSION['uid'])) {
                     if ($title == "Login") {
@@ -58,6 +59,7 @@
                     echo "<h3 class=\"h3-username\">".$_SESSION['displayname']."</h3>";
                     ?><a href="#" id="logout-btn" class="button-login-signup-logout">Logout</a><?php
                 }?>
-                </div>
-            </nav>
+            </div>
         </header>
+        <div class="header-helper">
+        </div>

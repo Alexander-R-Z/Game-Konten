@@ -20,6 +20,9 @@ body header {
   min-height: 5em;
   z-index: 9001;
 }
+body div.header-helper {
+  min-height: 6em;
+}
 body nav {
   width: 100%;
   z-index: 9002;
@@ -59,16 +62,36 @@ body div.form-group-login {
   display: grid;
   text-align: center;
 }
+body header.primary-header {
+  position: fixed;
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  z-index: 9001;
+  min-height: 6rem;
+}
+body header.primary-header h2.nav-header {
+  position: absolute;
+  margin: 1rem 2rem;
+  font-size: 3rem;
+}
+body header.primary-header div.login-section {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  right: 0;
+  margin: 1rem 2rem;
+  z-index: 9003;
+}
+body header.primary-header div.login-section h3.h3-username {
+  text-align: right;
+}
 body header.primary-header > nav.flex:first-child {
   min-width: 1319px;
 }
 body header.primary-header > nav {
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-}
-body header.primary-header > nav .nav-header {
-  margin: 2rem 0 2rem 2rem;
-  text-overflow: initial;
 }
 body header.primary-header > nav .button-login-signup-logout {
   display: block;
@@ -79,6 +102,8 @@ body header.primary-header > nav .primary-navigation {
   list-style: none;
   padding: 0;
   margin: 0;
+  max-width: 100%;
+  margin: 0 10em;
 }
 body header.primary-header > nav .primary-navigation a {
   text-decoration: none;
@@ -87,10 +112,6 @@ body header.primary-header > nav .primary-navigation a > [aria-hidden=true] {
   font-weight: 700;
   -webkit-margin-end: 0.75em;
           margin-inline-end: 0.75em;
-}
-body header.primary-header > nav div.login-section h3.h3-username {
-  text-align: right;
-  margin-right: 2rem;
 }
 body nav h2 {
   margin: 0;
@@ -243,6 +264,7 @@ body main .valorant {
   margin-bottom: 2em;
 }
 body main form.account-login-data-form {
+  position: relative;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -255,7 +277,7 @@ body main form.account-login-data-form .account-login-data-div {
   gap: 1em;
   margin: 1rem;
   border-radius: 1em;
-  padding: 5rem 3rem;
+  padding: 5rem 3rem 6.5rem 3rem;
   box-shadow: -5px -5px 20px hwb(0 100% 0%), 5px 5px 20px hwb(227 73% 20%);
 }
 body main form.account-login-data-form .account-login-data-div:hover {
@@ -288,4 +310,18 @@ body main .button-copy {
   box-shadow: none;
   margin: 0;
   padding: 0;
+}
+body main .edit-button {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  background: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+body main .edit-button img {
+  height: 1.5em;
+  width: auto;
+  filter: invert(0);
 }/*# sourceMappingURL=theme-light-neomorphic.css.map */

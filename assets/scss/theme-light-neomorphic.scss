@@ -33,9 +33,13 @@ body {
 
     header {
         width: 100%;
+        // border: 1px solid green; // temporary
         backdrop-filter: blur(5px);
         min-height: 5em;
         z-index: 9001;
+    }
+    div.header-helper {
+        min-height: 6em;
     }
     nav {
         width: 100%;
@@ -82,18 +86,35 @@ body {
     // ------------------------------------------------------------------------------------------------
     // ------------------------------------ new styles ------------------------------------
     // Video https://youtu.be/HbBMp6yUXO0?t=1237
-    // .primary-navigation {
-    // }
+    header.primary-header {
+        position: fixed;
+        backdrop-filter: blur(.2rem);
+        z-index: 9001;
+        min-height: 6rem;
+        h2.nav-header {
+            position: absolute;
+            margin: 1rem 2rem;
+            font-size: 3rem;
+        }
+        div.login-section {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            right: 0;
+            margin: 1rem 2rem;
+            z-index: 9003;
+            h3.h3-username {
+                text-align: right;
+            }
+        }
+    }
     header.primary-header>nav.flex:first-child {
         min-width: 1319px;
     }
     header.primary-header>nav {
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        .nav-header {
-            margin: 2rem 0 2rem 2rem;
-            text-overflow: initial;
-        }
         .button-login-signup-logout {
             display: block;
             text-align: right;
@@ -103,6 +124,8 @@ body {
             list-style: none;
             padding: 0;
             margin: 0;
+            max-width: 100%;
+            margin: 0 10em;
         }
         .primary-navigation a {
             text-decoration: none;
@@ -122,12 +145,6 @@ body {
         //         display: none;
         //     }
         // }
-        div.login-section {
-            h3.h3-username {
-                text-align: right;
-                margin-right: 2rem;
-            }
-        }
     }
     // @media (max-width: 35em) { // Video https://youtu.be/HbBMp6yUXO0?t=1237
     //     header.primary-header>nav {
@@ -291,6 +308,7 @@ body main {
         margin-bottom: 2em;
     }
     form.account-login-data-form {
+        position: relative;
         display: grid;
         justify-content: center;
         align-items: center;
@@ -302,7 +320,7 @@ body main {
             gap: 1em;
             margin: 1rem;
             border-radius: 1em;
-            padding: 5rem 3rem;
+            padding: 5rem 3rem 6.5rem 3rem;
             box-shadow: -5px -5px 20px $shadow-light, 5px 5px 20px $shadow-dark;
         }
         .account-login-data-div:hover {
@@ -336,5 +354,19 @@ body main {
         box-shadow: none;
         margin: 0;
         padding: 0;
+    }
+    .edit-button {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+        background: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+    .edit-button img {
+        height: 1.5em;
+        width: auto;
+        filter: invert(0);
     }
 }
