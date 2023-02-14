@@ -20,6 +20,9 @@ body header {
   min-height: 5em;
   z-index: 9001;
 }
+body div.header-helper {
+  min-height: 6em;
+}
 body nav {
   width: 100%;
   z-index: 9002;
@@ -37,7 +40,7 @@ body footer {
   z-index: 9000;
 }
 body nav > ul > li:hover {
-  color: hwb(0 100% 0%);
+  color: hwb(0 10% 90%);
 }
 body .flex {
   display: flex;
@@ -48,7 +51,7 @@ body h1 {
   text-shadow: none;
   font-family: "Open Sans", sans-serif;
   font-size: 60px;
-  font-weight: 400;
+  font-weight: 600;
   cursor: default;
 }
 body form.login-signup {
@@ -59,16 +62,36 @@ body div.form-group-login {
   display: grid;
   text-align: center;
 }
+body header.primary-header {
+  position: fixed;
+  -webkit-backdrop-filter: blur(0.2rem);
+          backdrop-filter: blur(0.2rem);
+  z-index: 9001;
+  min-height: 6rem;
+}
+body header.primary-header h2.nav-header {
+  position: absolute;
+  margin: 1rem 2rem;
+  font-size: 3rem;
+}
+body header.primary-header div.login-section {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  right: 0;
+  margin: 1rem 2rem;
+  z-index: 9003;
+}
+body header.primary-header div.login-section h3.h3-username {
+  text-align: right;
+}
 body header.primary-header > nav.flex:first-child {
   min-width: 1319px;
 }
 body header.primary-header > nav {
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-}
-body header.primary-header > nav .nav-header {
-  margin: 2rem 0 2rem 2rem;
-  text-overflow: initial;
 }
 body header.primary-header > nav .button-login-signup-logout {
   display: block;
@@ -79,6 +102,8 @@ body header.primary-header > nav .primary-navigation {
   list-style: none;
   padding: 0;
   margin: 0;
+  max-width: 100%;
+  margin: 0 10em;
 }
 body header.primary-header > nav .primary-navigation a {
   text-decoration: none;
@@ -87,10 +112,6 @@ body header.primary-header > nav .primary-navigation a > [aria-hidden=true] {
   font-weight: 700;
   -webkit-margin-end: 0.75em;
           margin-inline-end: 0.75em;
-}
-body header.primary-header > nav div.login-section h3.h3-username {
-  text-align: right;
-  margin-right: 2rem;
 }
 body nav h2 {
   margin: 0;
@@ -158,7 +179,7 @@ body input:focus {
   box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 16% 88%);
 }
 body button {
-  color: hwb(0 78% 22%);
+  color: hwb(0 87% 13%);
   font-weight: bold;
   font-weight: 600;
   box-shadow: -5px -5px 20px hwb(0 16% 88%), 5px 5px 20px hwb(0 8% 92%);
