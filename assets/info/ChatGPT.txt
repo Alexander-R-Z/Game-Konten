@@ -266,15 +266,18 @@ Bitte erstelle mir das Modalpopup-Fenster für home.php
 
 
 
-OK, wenn du bereits eine Seite hast, auf der du Formulare erstellen kannst, und du PHP und SQLite3 verwendest, könntest du folgende Schritte ausführen:
+OK, wenn du bereits eine Seite hast, auf der du Formulare erstellen kannst, und du PHP und SQLite3 verwendest, 
+könntest du folgende Schritte ausführen:
 
 Stelle eine Verbindung zur Datenbank her
-Zuerst musst du eine Verbindung zur SQLite3-Datenbank herstellen. Du kannst das SQLite3-Modul von PHP verwenden, um das zu tun. Hier ist ein Beispiel:
+Zuerst musst du eine Verbindung zur SQLite3-Datenbank herstellen. Du kannst das SQLite3-Modul von PHP verwenden, 
+um das zu tun. Hier ist ein Beispiel:
 
 php
 Copy code
 $db = new SQLite3('mydatabase.db');
-Das stellt eine Verbindung zur Datenbank mit dem Namen "mydatabase.db" her. Du kannst den Namen der Datenbank und den Pfad zur Datenbankdatei ändern, um deinem Setup zu entsprechen.
+Das stellt eine Verbindung zur Datenbank mit dem Namen "mydatabase.db" her. Du kannst den Namen der Datenbank und 
+den Pfad zur Datenbankdatei ändern, um deinem Setup zu entsprechen.
 
 Daten aus der Datenbank abrufen
 Um Daten aus der Datenbank abzurufen, musst du eine SELECT-Abfrage ausführen. Hier ist ein Beispiel:
@@ -285,10 +288,13 @@ $results = $db->query('SELECT * FROM mytable');
 while ($row = $results->fetchArray()) {
     // Hier kannst du die Daten verarbeiten
 }
-Das führt eine SELECT-Abfrage aus, die alle Spalten und alle Zeilen aus der Tabelle "mytable" abruft. Dann geht es durch jede Zeile und verarbeitet die Daten. Du kannst die SELECT-Abfrage anpassen, um nur bestimmte Spalten oder Zeilen abzurufen, je nachdem, was du benötigst.
+Das führt eine SELECT-Abfrage aus, die alle Spalten und alle Zeilen aus der Tabelle "mytable" abruft. 
+Dann geht es durch jede Zeile und verarbeitet die Daten. Du kannst die SELECT-Abfrage anpassen, 
+um nur bestimmte Spalten oder Zeilen abzurufen, je nachdem, was du benötigst.
 
 Daten in das Formular einfügen
-Sobald du die Daten aus der Datenbank abgerufen hast, kannst du sie in das Formular einfügen. Hier ist ein Beispiel, wie du das tun kannst:
+Sobald du die Daten aus der Datenbank abgerufen hast, kannst du sie in das Formular einfügen. Hier ist ein Beispiel, 
+wie du das tun kannst:
 
 php
 Copy code
@@ -298,7 +304,9 @@ Copy code
     <input type="text" name="field3" value="<?php echo $row['field3']; ?>">
     <input type="submit" value="Speichern">
 </form>
-Das erstellt ein HTML-Formular, das drei Textfelder für die Spalten "field1", "field2" und "field3" enthält. Der Wert jedes Textfelds wird auf den Wert in der Datenbank gesetzt. Wenn du das Formular absendest, wird es an die Seite "edit.php" gesendet.
+Das erstellt ein HTML-Formular, das drei Textfelder für die Spalten "field1", "field2" und "field3" enthält. 
+Der Wert jedes Textfelds wird auf den Wert in der Datenbank gesetzt. Wenn du das Formular absendest, 
+wird es an die Seite "edit.php" gesendet.
 
 Daten in die Datenbank aktualisieren
 Wenn das Formular abgesendet wird, musst du die Daten in die Datenbank aktualisieren. Hier ist ein Beispiel, wie du das tun kannst:
@@ -316,4 +324,5 @@ $stmt->bindValue(':field2', $field2, SQLITE3_TEXT);
 $stmt->bindValue(':field3', $field3, SQLITE3_TEXT);
 $stmt->bindValue(':id', $id, SQLITE3_INTEGER);
 $stmt->execute();
-Das aktualisiert die Zeile in der Tabelle "mytable", die die ID hat, die im Formularfeld "id" angegeben ist. Es aktualisiert die Werte in den Spalten "field1", "field2" und "field3" mit den
+Das aktualisiert die Zeile in der Tabelle "mytable", die die ID hat, die im Formularfeld "id" angegeben ist. 
+Es aktualisiert die Werte in den Spalten "field1", "field2" und "field3" mit den

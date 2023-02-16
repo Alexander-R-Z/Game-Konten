@@ -9,7 +9,7 @@ if(!is_file('../../assets/db/game_konten.sqlite3')){
 }
 // connecting the database
 // $conn = new MyDB('sqlite:../db/game_konten.sqlite3');
-class MyDB extends SQLite3
+class SQLite extends SQLite3
 {
     function __construct()
     {
@@ -19,7 +19,7 @@ class MyDB extends SQLite3
     }
 }
 
-$db = new MyDB();
+$db = new SQLite('game_konten.sqlite3');
 if(!$db){
     echo $db->lastErrorMsg();
 } else {
