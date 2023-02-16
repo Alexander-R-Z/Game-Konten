@@ -71,11 +71,11 @@ Old SQLite Tables
 
 /*
 -- Drop the existing tables
-DROP TABLE IF EXISTS UserRole;
-DROP TABLE IF EXISTS AccountData;
-DROP TABLE IF EXISTS Role;
 DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS Role;
+DROP TABLE IF EXISTS UserRole;
 DROP TABLE IF EXISTS Game;
+DROP TABLE IF EXISTS AccountData;
 DROP TABLE IF EXISTS RoleAccountData;
 
 -- Create the new User table
