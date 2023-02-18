@@ -1,5 +1,12 @@
 <?php
 
+$db = new SQLite();
+if(!$db){
+    echo $db->lastErrorMsg();
+} else {
+    echo "Opened database successfully\n";
+}
+
 if(!isset($_SESSION)){session_start();}
 
 function emptyImputSignup($username, $displayname, $pw) {

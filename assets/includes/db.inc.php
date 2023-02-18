@@ -19,12 +19,12 @@ class SQLite extends SQLite3
     }
 }
 
-$db = new SQLite('game_konten.sqlite3');
-if(!$db){
-    echo $db->lastErrorMsg();
-} else {
-    echo "Opened database successfully\n";
-}
+// $db = new SQLite('game_konten.sqlite3');
+// if(!$db){
+//     echo $db->lastErrorMsg();
+// } else {
+//     echo "Opened database successfully\n";
+// }
 
 // $result = $db->query('SELECT * FROM `user` WHERE `username` = "admin" AND `password` = "1";');
 // var_dump($result->fetchArray(SQLITE3_ASSOC));

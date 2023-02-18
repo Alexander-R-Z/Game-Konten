@@ -97,7 +97,7 @@ require_once('assets/header/header.php');
     </div>
     <div class="modal-account-login-data-form-edit" id="modal-account-login-data-form-edit">
         <div class="modal-account-login-data-form-edit-container account-login-data-div">
-            <button data-close-button class="edit-button"><img src="assets/img/edit.png" alt=""></button>
+            <button data-close-button="close-button" class="close-button"><img src="assets/img/edit.png" alt=""></button>
             <div class="lable-input">
                 <label for="username">Username</label>
                 <div class="copy-to-clipboard-helper">
