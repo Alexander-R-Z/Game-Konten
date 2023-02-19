@@ -50,7 +50,7 @@ require_once('assets/header/header.php');
                             ?>
                             
                             <!-- method="post" action="edit.php" -->
-                            <form class="account-login-data-form grid-item">
+                            <form class="account-login-data-form grid-item" onsubmit="handleSubmit(event)">
                                 <div class="account-login-data-div">
                                     <button data-modal-target="#modal-account-login-data-form-edit" class="edit-button"><img src="assets/img/edit.png" alt=""></button>
                                     <div class="lable-input">
@@ -202,3 +202,11 @@ require_once('assets/header/header.php');
     }
 </script>
 <script src="assets/js/modal-edit.js"></script>
+<script>
+function handleSubmit(event) {
+  // Verhindern, dass das Formular neu geladen wird
+  event.preventDefault();
+  
+  // Hier kannst du den Code schreiben, der beim Klicken auf den Button ausgeführt werden soll
+}
+</script>
