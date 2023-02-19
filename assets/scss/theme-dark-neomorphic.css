@@ -151,9 +151,12 @@ body p, body input, body select, body textarea, body button {
   font-size: 16px;
 }
 body form.login-signup {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -35%);
   padding: 16px;
   width: 320px;
-  margin: 4em auto;
 }
 body .segment {
   margin-bottom: 2em;
@@ -210,8 +213,7 @@ body #dark-mode-toggle {
 }
 body div.theme {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 0;
 }
 
 @media (min-width: 100rem) {

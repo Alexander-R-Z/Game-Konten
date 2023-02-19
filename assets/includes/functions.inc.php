@@ -1,12 +1,5 @@
 <?php
 
-$db = new SQLite();
-if(!$db){
-    echo $db->lastErrorMsg();
-} else {
-    echo "Opened database successfully\n";
-}
-
 if(!isset($_SESSION)){session_start();}
 
 function emptyImputSignup($username, $displayname, $pw) {
@@ -73,11 +66,9 @@ function uidExists($db, $username) {
         exit();
     }
 
-    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':username', $username, SQLITE3_TEXT);
 
     $resultDB = $stmt->execute();
-    var_dump($resultDB->fetchArray(SQLITE3_ASSOC));
-    $row = $resultDB->fetchArray(SQLITE3_ASSOC);
     
     if ($row = $resultDB->fetchArray(SQLITE3_ASSOC)) {
         return $row;

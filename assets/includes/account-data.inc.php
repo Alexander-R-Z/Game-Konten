@@ -1,7 +1,7 @@
 <?php
 
 function GameDbEntrys($db) {
-    // $sql = "SELECT COUNT(*) as count FROM AccountData WHERE gameId = :gameId;";
+    // $sql = "SELECT COUNT(*) as count FROM AccountData WHERE gamenameId = :gamenameId;";
     $sql = "SELECT gameName FROM Game;";
     $stmt = $db->prepare($sql);
     if (!$stmt) {
@@ -30,16 +30,16 @@ function GameDbEntrys($db) {
     }
     $stmt->close();
 }
-function countAccountDbEntrys($db, $gameId) {
-    // $sql = "SELECT COUNT(*) as count FROM AccountData WHERE gameId = :gameId;";
-    $sql = "SELECT userName FROM AccountData WHERE gameId = :gameId;";
+function countAccountDbEntrys($db, $gamenameId) {
+    // $sql = "SELECT COUNT(*) as count FROM AccountData WHERE gamenameId = :gamenameId;";
+    $sql = "SELECT userName FROM AccountData WHERE gamenameId = :gamenameId;";
     $stmt = $db->prepare($sql);
     if (!$stmt) {
         header('location: ../../home.php?error=stmtfailed');
         exit();
     }
 
-    $stmt->bindParam(':gameId', $gameId);
+    $stmt->bindParam(':gamenameId', $gamenameId);
     // $stmt->execute();
     // $row = $stmt->fetch();
 
@@ -60,7 +60,7 @@ function countAccountDbEntrys($db, $gameId) {
     return $count;
     $stmt->close();
 }
-function emptyAccountData($username, $password, $gameId) {
+function emptyAccountData($username, $password, $gamenameId) {
     $result = true;
     if (!empty($username)) {
         $result = false;
@@ -68,7 +68,7 @@ function emptyAccountData($username, $password, $gameId) {
     if (!empty($password)) {
         $result = false;
     }
-    if (!empty($gameId)) {
+    if (!empty($gamenameId)) {
         $result = false;
     }
     return $result;
@@ -91,9 +91,9 @@ function emptyTagline($tagline) {
     }
     return $result;
 }
-function createNewAccountData($db, $username, $password, $displayname, $tagline, $gameId) {
-    $sql = "INSERT INTO AccountData (userName, password, displayname, tagline, createDate, createdBy, changeDate, changedBy, gameId)
-    VALUES (:username, :password, :displayname, :tagline, datetime('now'), :createdBy, datetime('now'), :changedBy, :gameId);";
+function createNewAccountData($db, $username, $password, $displayname, $tagline, $gamenameId) {
+    $sql = "INSERT INTO AccountData (userName, password, displayname, tagline, createDate, createdBy, changeDate, changedBy, gamenameId)
+    VALUES (:username, :password, :displayname, :tagline, datetime('now'), :createdBy, datetime('now'), :changedBy, :gamenameId);";
     $stmt = $db->prepare($sql);
     if (!$stmt) {
         header('location: ../../home.php?error=stmtfailed');
@@ -106,9 +106,57 @@ function createNewAccountData($db, $username, $password, $displayname, $tagline,
     $stmt->bindParam(':tagline', $tagline);
     $stmt->bindParam(':createdBy', $_SESSION['uid']);
     $stmt->bindParam(':changedBy', $_SESSION['uid']);
-    $stmt->bindParam(':gameId', $gameId);
+    $stmt->bindParam(':gamenameId', $gamenameId);
     $stmt->execute();
     header('location: ../../home.php?error=none');
     $stmt->close();
     exit();
+}
+
+function retrieveGameDbEntrys($db) {
+    $sql = "SELECT * FROM Game;";
+    $stmt = $db->prepare($sql);
+    if (!$stmt) {
+        header('location: ../../home.php?error=stmtfailed');
+        exit();
+    }
+
+    $resultDB = $stmt->execute();
+    $row = $resultDB->fetchArray(SQLITE3_ASSOC);
+
+    return $row;
+    $stmt->close();
+}
+
+function retrieveAccountDbEntrys($db, $gamenameId) {
+    $sql = "SELECT * FROM AccountData WHERE gamenameId = :gamenameId;";
+    $stmt = $db->prepare($sql);
+    if (!$stmt) {
+        header('location: ../../home.php?error=stmtfailed');
+        exit();
+    }
+
+    $stmt->bindParam(':gamenameId', $gamenameId, SQLITE3_INTEGER);
+    $resultDB = $stmt->execute();
+    $row = $resultDB->fetchArray(SQLITE3_ASSOC);
+
+    return $row;
+    $stmt->close();
+}
+
+function countAccountDataForGame($db, $gamenameId) {
+    $sql = "SELECT COUNT(*) FROM AccountData WHERE gamenameId = :gamenameId;";
+    $stmt = $db->prepare($sql);
+    if (!$stmt) {
+        header('location: ../../home.php?error=stmtfailed');
+        exit();
+    }
+
+    $stmt->bindParam(':gamenameId', $gamenameId, SQLITE3_INTEGER);
+    $resultDB = $stmt->execute();
+    $row = $resultDB->fetchArray(SQLITE3_ASSOC);
+
+    $count = $row['COUNT(*)'];
+    return $count;
+    $stmt->close();
 }

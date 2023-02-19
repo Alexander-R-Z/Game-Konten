@@ -15,12 +15,46 @@ require_once('assets/header/header.php');
             </div>
             <div class="account-login-data grid-container">
                 <?php
-                    // require_once(BASE_PATH . '/assets/includes/db.inc.php');
-                    // require_once(BASE_PATH . '/assets/includes/account-data.inc.php');
-                    // $games = GameDbEntrys($db);
-                    // var_dump($games);
-                    // $count = countAccountDbEntrys($db, $gameId);
-                    $count = 15;
+                    if(!isset($_SESSION)){session_start();}
+                    //check if the database file exists and create a new if not
+                    if(!is_file('assets/db/game_konten.sqlite3')){
+                        file_put_contents('assets/db/game_konten.sqlite3', null);
+                    }
+                    // connecting the database
+                    // $conn = new MyDB('sqlite:../db/game_konten.sqlite3');
+                    class SQLite extends SQLite3
+                    {
+                        function __construct()
+                        {
+                            $filename = 'assets/db/game_konten.sqlite3';
+                            SQLite3::open($filename, $flags = SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE);
+                        }
+                    }
+                    $db = new SQLite();
+                    if(!$db){
+                        echo $db->lastErrorMsg();
+                    }
+                    require_once('assets/includes/account-data.inc.php');
+                    // $gamenameId = 1;
+                    $game = retrieveGameDbEntrys($db);
+                    var_dump($game['id']);
+                    // while ($id = $game['id']) {};
+                    $row = null;
+                    $count = 0;
+                    var_dump($game);
+                    foreach ($game as $id) {
+                        $gamenameId = $id;
+                        $row = retrieveAccountDbEntrys($db, $gamenameId);
+                        var_dump($row);
+                        $count = countAccountDataForGame($db, $gamenameId);
+                        var_dump($count);
+                    }
+                    // $gamenameId = 1;
+                    // $row = retrieveAccountDbEntrys($db, $gamenameId);
+                    // $count = countAccountDataForGame($db, $gamenameId);
+                    // $row = retrieveAccountDbEntrys($db, $gamenameId);
+                    // $count = countAccountDataForGame($db, $gamenameId);
+                    // $count = 15;
                     for ($i = 0; $i < $count; $i++) { ?>
 
                     <!-- method="post" action="edit.php" -->

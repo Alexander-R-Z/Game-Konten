@@ -19,6 +19,13 @@ class SQLite extends SQLite3
     }
 }
 
+$db = new SQLite();
+if(!$db){
+    echo $db->lastErrorMsg();
+} else {
+    echo "Opened database successfully\n";
+}
+
 // $db = new SQLite('game_konten.sqlite3');
 // if(!$db){
 //     echo $db->lastErrorMsg();
