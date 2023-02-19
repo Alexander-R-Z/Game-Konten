@@ -138,9 +138,9 @@ function retrieveAccountDbEntrys($db, $gamenameId) {
 
     $stmt->bindParam(':gamenameId', $gamenameId, SQLITE3_INTEGER);
     $resultDB = $stmt->execute();
-    $row = $resultDB->fetchArray(SQLITE3_ASSOC);
+    // $row = $resultDB->fetchArray(SQLITE3_ASSOC);
 
-    return $row;
+    return $resultDB;
     $stmt->close();
 }
 

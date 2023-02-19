@@ -219,3 +219,6 @@ INSERT INTO AccountData (username, password, displayname, tagline, gamenameId, c
 INSERT INTO RoleAccountData (roleId, accountDataId) VALUES (1, 1);
 -- Fügt eine Zuordnung zwischen der Rolle mit der ID 1 und den Kontodaten mit der ID 1 hinzu.
 */
+
+/* INSERT INTO AccountData (username, password, displayname, tagline, gamenameId, changeDate, createdBy, changeDate, changedBy) VALUES ('ghzudsiubg', 'smurf12!', 'Charli d Amelio', '4518', 1, datetime('now'), 'System', datetime('now'), 'System');
+-- Fügt neue Kontodaten für einen Benutzer mit dem Benutzernamen 'john_doe', dem Passwort 'mypassword' und dem Spiel mit der ID 1 hinzu. */

@@ -37,89 +37,86 @@ require_once('assets/header/header.php');
                     require_once('assets/includes/account-data.inc.php');
                     // $gamenameId = 1;
                     $game = retrieveGameDbEntrys($db);
-                    var_dump($game['id']);
-                    // while ($id = $game['id']) {};
+                    // var_dump($game);
                     $row = null;
                     $count = 0;
-                    var_dump($game);
-                    foreach ($game as $id) {
-                        $gamenameId = $id;
-                        $row = retrieveAccountDbEntrys($db, $gamenameId);
-                        var_dump($row);
-                        $count = countAccountDataForGame($db, $gamenameId);
-                        var_dump($count);
-                    }
-                    // $gamenameId = 1;
-                    // $row = retrieveAccountDbEntrys($db, $gamenameId);
-                    // $count = countAccountDataForGame($db, $gamenameId);
-                    // $row = retrieveAccountDbEntrys($db, $gamenameId);
-                    // $count = countAccountDataForGame($db, $gamenameId);
+                    $test = 0;
+                    $gamenameId = $game;
+                    $resultDB = retrieveAccountDbEntrys($db, $gamenameId);
+                    $count = countAccountDataForGame($db, $gamenameId);
                     // $count = 15;
-                    for ($i = 0; $i < $count; $i++) { ?>
+                    for ($i = 1; $i < $count; $i++) { 
+                        while ($row = $resultDB->fetchArray(SQLITE3_ASSOC)) {
+                            ?>
+                            
+                            <!-- method="post" action="edit.php" -->
+                            <form class="account-login-data-form grid-item">
+                                <div class="account-login-data-div">
+                                    <button data-modal-target="#modal-account-login-data-form-edit" class="edit-button"><img src="assets/img/edit.png" alt=""></button>
+                                    <div class="lable-input">
+                                        <label for="username">Username</label>
+                                        <div class="copy-to-clipboard-helper">
+                                            <input class="account-data-input" type="text" name="username" placeholder="Username" required="required" value="<?php echo $row['username']; ?>" readonly/>
+                                            <div class="input-copy">
+                                                <button class="button-copy" type="button" onclick="copyToClipboard('test')">
+                                                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lable-input">
+                                        <label for="password">Password</label>
+                                        <div class="copy-to-clipboard-helper">
+                                            <input class="account-data-input" type="text" name="password" placeholder="Password" required="required" value="<?php echo $row['password']; ?>" readonly/>
+                                            <div class="input-copy">
+                                                <button class="button-copy" type="button" onclick="copyToClipboard('test')">
+                                                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lable-input" style="display: none;">
+                                        <label for="displayname">Displayname</label>
+                                        <div class="copy-to-clipboard-helper">
+                                            <input class="account-data-input" type="text" name="displayname" placeholder="Displayname" value="<?php echo $row['displayname']; ?>" readonly/>
+                                            <div class="input-copy">
+                                                <button class="button-copy" type="button" onclick="copyToClipboard('test')">
+                                                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="lable-input" style="display: none;">
+                                        <label for="tagline">Tag</label>
+                                        <div class="copy-to-clipboard-helper">
+                                            <input class="account-data-input" type="text" name="tagline" placeholder="EUW00" value="<?php echo $row['tagline']; ?>" readonly/>
+                                            <div class="input-copy">
+                                                <button class="button-copy" type="button" onclick="copyToClipboard('test')">
+                                                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
 
-                    <!-- method="post" action="edit.php" -->
-                    <form class="account-login-data-form grid-item">
-                        <div class="account-login-data-div">
-                            <button data-modal-target="#modal-account-login-data-form-edit" class="edit-button"><img src="assets/img/edit.png" alt=""></button>
-                            <div class="lable-input">
-                                <label for="username">Username</label>
-                                <div class="copy-to-clipboard-helper">
-                                    <input class="account-data-input" type="text" name="username" placeholder="Username" required="required" value="<?php echo $row['username']; ?>" readonly/>
-                                    <div class="input-copy">
-                                        <button class="button-copy" type="button" onclick="copyToClipboard('test')">
-                                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lable-input">
-                                <label for="password">Password</label>
-                                <div class="copy-to-clipboard-helper">
-                                    <input class="account-data-input" type="text" name="password" placeholder="Password" required="required" value="<?php echo $row['password']; ?>" readonly/>
-                                    <div class="input-copy">
-                                        <button class="button-copy" type="button" onclick="copyToClipboard('test')">
-                                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lable-input" style="display: none;">
-                                <label for="displayname">Displayname</label>
-                                <div class="copy-to-clipboard-helper">
-                                    <input class="account-data-input" type="text" name="displayname" placeholder="Displayname" value="<?php echo $row['displayname']; ?>" readonly/>
-                                    <div class="input-copy">
-                                        <button class="button-copy" type="button" onclick="copyToClipboard('test')">
-                                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lable-input" style="display: none;">
-                                <label for="tagline">Tag</label>
-                                <div class="copy-to-clipboard-helper">
-                                    <input class="account-data-input" type="text" name="tagline" placeholder="EUW00" value="<?php echo $row['tagline']; ?>" readonly/>
-                                    <div class="input-copy">
-                                        <button class="button-copy" type="button" onclick="copyToClipboard('test')">
-                                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
-                                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-
+                            <?php
+                        }
+                    ?>
+                    
+                    
                     <?php
                     }
                 ?>
