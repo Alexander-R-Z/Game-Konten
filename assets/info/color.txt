@@ -16,3 +16,6 @@ https://huemint.com/back-gradient-3/#palette=050c07-9d9f9d-d5d3d2-a20094
 2: # Back Gradient 3
 Color Palette: Back Gradient 3
 https://huemint.com/back-gradient-3/#palette=050c07-c24640-daa988-eef6f4
+
+CSS Gradient Generator
+https://cssgradient.io/
