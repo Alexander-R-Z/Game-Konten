@@ -95,5 +95,5 @@ require_once("assets/header/header.php");
 </main>
 
 <?php
-    require_once('/assets/footer/footer.php');
+    require_once('assets/footer/footer.php');
 ?>
