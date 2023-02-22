@@ -7,7 +7,7 @@ require_once("assets/header/header.php");
 ?>
 <main>
     <div class="container">
-        <form method="POST" action="assets/includes/home/signup.inc.php" class="login-signup">
+        <form method="POST" action="assets/includes/login-signup/signup.inc.php" class="login-signup">
             <div class="segment form-group-login">
                 <h1>SignUp</h1>
             </div>

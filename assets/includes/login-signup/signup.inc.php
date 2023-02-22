@@ -12,30 +12,30 @@ if (isset($_POST['submit'])) {
     require_once 'functions.inc.php';
 
     if (emptyImputSignup($username, $displayname, $pw) !== false) {
-        header("location: ../../signup.php?error=emptyimput");
+        header("location: ../../../signup.php?error=emptyimput");
         exit();
     }
     if (invalidUid($username) === true) {
-        header("location: ../../signup.php?error=invalidusername");
+        header("location: ../../../signup.php?error=invalidusername");
         exit();
     }
     if (newPwdHash($pw) === true) {
-        header("location: ../../signup.php?error=pwdhashfail");
+        header("location: ../../../signup.php?error=pwdhashfail");
         exit();
     } else {$newPwHash = newPwdHash($pw);}
     
     if (invalidPwHash($pw, $newPwHash) !== false) {
-        header("location: ../../signup.php?error=invalidPwHash");
+        header("location: ../../../signup.php?error=invalidPwHash");
         exit();
     }
     if (uidExists($db, $username) !== false) {
-        header("location: ../../signup.php?error=usernametaken");
+        header("location: ../../../signup.php?error=usernametaken");
         exit();
     }
 
     createUser($db, $username, $displayname, $newPwHash);
 }
 else {
-    header("location: ../../signup.php");
+    header("location: ../../../signup.php");
     exit();
 }

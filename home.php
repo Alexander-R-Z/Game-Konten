@@ -15,7 +15,7 @@ require_once('assets/header/header.php');
             </div>
             <div class="account-login-data grid-container">
                 <?php
-                    require_once('assets/includes/home/account-data.inc.php');
+                    require_once('assets/includes/home/db.inc.php');
                     require_once('assets/includes/home/account-data.inc.php');
                     // $gamenameId = 1;
                     $game = retrieveGameDbEntrys($db);
