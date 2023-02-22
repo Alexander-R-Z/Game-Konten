@@ -7,7 +7,7 @@ require_once("assets/header/header.php");
 ?>
 <main>
     <div class="container">
-        <form method="POST" action="assets/includes/signup.inc.php" class="login-signup">
+        <form method="POST" action="assets/includes/home/signup.inc.php" class="login-signup">
             <div class="segment form-group-login">
                 <h1>SignUp</h1>
             </div>
@@ -84,5 +84,5 @@ require_once("assets/header/header.php");
     </div>
 </main>
 <?php
-    require_once(BASE_PATH . '/assets/footer/footer.php');
+    require_once('/assets/footer/footer.php');
 ?>
