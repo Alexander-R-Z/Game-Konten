@@ -10,7 +10,7 @@
     else if (empty($_SESSION['uid'])) {
         header('location: index.php?error=notloggedin');
     }
-    $linkToTheFolderGameKontenAlex = 'D:/VSCode/Game-Konten';
+    $linkToTheFolderGameKontenAlex = 'C:\Users\23max\Desktop\Game-Konten';
     define('BASE_PATH', $linkToTheFolderGameKontenAlex);
     // $linkToTheFolderGameKontenMax = '';
     // define('BASE_PATH', $linkToTheFolderGameKontenMax);
