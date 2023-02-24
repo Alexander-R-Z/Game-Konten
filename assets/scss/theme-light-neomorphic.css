@@ -151,9 +151,12 @@ body p, body input, body select, body textarea, body button {
   font-size: 16px;
 }
 body form.login-signup {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -35%);
   padding: 16px;
   width: 320px;
-  margin: 4em auto;
 }
 body .segment {
   margin-bottom: 2em;
@@ -210,8 +213,7 @@ body #dark-mode-toggle {
 }
 body div.theme {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 0;
 }
 
 @media (min-width: 100rem) {
@@ -278,6 +280,7 @@ body main form.account-login-data-form .account-login-data-div {
   margin: 1rem;
   border-radius: 1em;
   padding: 5rem 3rem 6.5rem 3rem;
+  background-color: hwb(228 92% 6%);
   box-shadow: -5px -5px 20px hwb(0 100% 0%), 5px 5px 20px hwb(227 73% 20%);
 }
 body main form.account-login-data-form .account-login-data-div:hover {
@@ -296,6 +299,7 @@ body main form.account-login-data-form .lable-input {
 body main .account-data-input {
   position: relative;
   padding-right: 3rem;
+  background-color: hwb(228 92% 6%);
 }
 body main .input-copy {
   position: absolute;
@@ -324,4 +328,90 @@ body main .edit-button img {
   height: 1.5em;
   width: auto;
   filter: invert(0);
+}
+
+.modal-account-login-data-form-edit {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  z-index: 9900;
+}
+.modal-account-login-data-form-edit .account-login-data-div {
+  display: grid;
+  justify-content: center;
+  gap: 1em;
+  margin: 1rem;
+  border-radius: 1em;
+  padding: 7rem 7rem;
+  background-color: hwb(228 92% 6%);
+}
+.modal-account-login-data-form-edit input {
+  min-width: 22em;
+  margin-bottom: 1em;
+}
+.modal-account-login-data-form-edit .lable-input {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.modal-account-login-data-form-edit .account-data-input {
+  position: relative;
+  padding-right: 3rem;
+  background-color: hwb(228 92% 6%);
+}
+.modal-account-login-data-form-edit .input-copy {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+}
+.modal-account-login-data-form-edit .copy-to-clipboard-helper {
+  position: relative;
+}
+.modal-account-login-data-form-edit .button-copy {
+  background: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+.modal-account-login-data-form-edit .close-button {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  background: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+.modal-account-login-data-form-edit .close-button img {
+  height: 2em;
+  width: auto;
+  filter: invert(0);
+}
+
+.modal-account-login-data-form-edit.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9890;
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-backdrop-filter: blur(0.75px);
+          backdrop-filter: blur(0.75px);
 }/*# sourceMappingURL=theme-light-neomorphic.css.map */

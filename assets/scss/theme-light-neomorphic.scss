@@ -13,6 +13,7 @@ $text-color-primary: hwb(0 15% 85%);
 $text-color-secondary: hwb(227 73% 20%);
 $text-shadow: hwb(0 100% 0% / 0.85);
 $background-color-primary: hwb(228 92% 6%);
+$background-color-secondary: hwb(223 93% 5%);
 $shadow-dark: hwb(227 73% 20%);
 $shadow-light: hwb(0 100% 0%);
 $button-red: hwb(6 0% 32%);
@@ -202,9 +203,12 @@ body {
         font-size: 16px;
     }
     form.login-signup {
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -35%);
         padding: 16px;
         width: 320px;
-        margin: 4em auto;
     }
     .segment {
         margin-bottom: 2em;
@@ -260,8 +264,7 @@ body {
     }
     div.theme {
         position: absolute;
-        bottom: 10px;
-        left: 10px;
+        bottom: 0;
     }
 }
 
@@ -321,6 +324,7 @@ body main {
             margin: 1rem;
             border-radius: 1em;
             padding: 5rem 3rem 6.5rem 3rem;
+            background-color: $background-color-primary;
             box-shadow: -5px -5px 20px $shadow-light, 5px 5px 20px $shadow-dark;
         }
         .account-login-data-div:hover {
@@ -340,6 +344,7 @@ body main {
     .account-data-input {
         position: relative;
         padding-right: 3rem;
+        background-color: $background-color-primary;
     }
     .input-copy {
         position: absolute;
@@ -369,4 +374,99 @@ body main {
         width: auto;
         filter: invert(0);
     }
+}
+
+.modal-account-login-data-form-edit {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    // background-color: $background-color-primary;
+    // padding: 16em 7.5em;
+    // border-radius: 1em;
+    // backdrop-filter: blur(5px);
+    // box-shadow: -5px -5px 20px $shadow-light, 5px 5px 20px $shadow-dark;
+    z-index: 9900;
+    
+    .account-login-data-div {
+        display: grid;
+        justify-content: center;
+        gap: 1em;
+        margin: 1rem;
+        border-radius: 1em;
+        padding: 7rem 7rem;
+        background-color: $background-color-primary;
+        // box-shadow: -2px -2px 10px $shadow-light, 2px 2px 10px $shadow-dark;
+    }
+    // .account-login-data-div:hover {
+    //     box-shadow: -2px -2px 5px $shadow-light, 2px 2px 5px $shadow-dark;
+    // }
+    // .account-login-data-div:focus {
+    //     box-shadow: inset 1px 1px 2px $shadow-dark, inset -1px -1px 2px $shadow-light;
+    // }
+    input {
+        min-width: 22em;
+        margin-bottom: 1em;
+    }
+    .lable-input {
+        display: grid;
+        gap: 1rem;
+        text-align: center;
+        font-weight: 600;
+        letter-spacing: .5px;
+    }
+    .account-data-input {
+        position: relative;
+        padding-right: 3rem;
+        background-color: $background-color-primary;
+    }
+    .input-copy {
+        position: absolute;
+        top: 18px;
+        right: 22px;
+    }
+    .copy-to-clipboard-helper {
+        position: relative;
+    }
+    .button-copy {
+        background: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+    .close-button {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+        background: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+    .close-button img {
+        height: 2em;
+        width: auto;
+        filter: invert(0);
+    }
+}
+.modal-account-login-data-form-edit.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9890;
+    pointer-events: none;
+}
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+    backdrop-filter: blur(.75px);
 }

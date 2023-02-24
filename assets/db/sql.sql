@@ -71,11 +71,11 @@ Old SQLite Tables
 
 /*
 -- Drop the existing tables
-DROP TABLE IF EXISTS UserRole;
-DROP TABLE IF EXISTS AccountData;
-DROP TABLE IF EXISTS Role;
 DROP TABLE IF EXISTS User;
+DROP TABLE IF EXISTS Role;
+DROP TABLE IF EXISTS UserRole;
 DROP TABLE IF EXISTS Game;
+DROP TABLE IF EXISTS AccountData;
 DROP TABLE IF EXISTS RoleAccountData;
 
 -- Create the new User table
@@ -195,3 +195,30 @@ SELECT * FROM RoleAccountData WHERE roleId = 1;
 SELECT * FROM UserRole WHERE userId = 1;
 -- Gibt alle Spalten und Zeilen der UserRole-Tabelle zurück, wo die userId 1 ist.
 */
+
+/* 
+INSERT INTO Role (rolename, createdBy) VALUES ('Admin', 'System') ON CONFLICT DO NOTHING;
+-- Fügt eine neue Rolle mit dem Namen 'Admin' und dem Ersteller 'System' hinzu.
+
+INSERT INTO UserRole (userId, roleId) VALUES (1, 1) ON CONFLICT DO NOTHING;
+-- Fügt eine Zuordnung zwischen dem Benutzer mit der ID 1 und der Rolle mit der ID 1 hinzu.
+
+INSERT INTO UserRole (userId, roleId) VALUES (3, 1) ON CONFLICT DO NOTHING;
+-- Fügt eine Zuordnung zwischen dem Benutzer mit der ID 1 und der Rolle mit der ID 1 hinzu.
+*/
+
+/* 
+INSERT INTO Game (gamename, createDate, createdBy, changeDate, changedBy) VALUES ('VALORANT', datetime('now'), 'System', datetime('now'), 'System');
+-- Fügt ein neues Spiel mit dem Namen 'Chess' und dem Ersteller 'System' hinzu.
+
+INSERT INTO AccountData (username, password, displayname, tagline, gamenameId, changeDate, createdBy, changeDate, changedBy) VALUES ('06012022normal', 'hgt/196/kd?', 'dfnaguishadio', '3453s', 1, datetime('now'), 'System', datetime('now'), 'System');
+-- Fügt neue Kontodaten für einen Benutzer mit dem Benutzernamen 'john_doe', dem Passwort 'mypassword' und dem Spiel mit der ID 1 hinzu.
+*/
+
+/*
+INSERT INTO RoleAccountData (roleId, accountDataId) VALUES (1, 1);
+-- Fügt eine Zuordnung zwischen der Rolle mit der ID 1 und den Kontodaten mit der ID 1 hinzu.
+*/
+
+/* INSERT INTO AccountData (username, password, displayname, tagline, gamenameId, changeDate, createdBy, changeDate, changedBy) VALUES ('ghzudsiubg', 'smurf12!', 'Charli d Amelio', '4518', 1, datetime('now'), 'System', datetime('now'), 'System');
+-- Fügt neue Kontodaten für einen Benutzer mit dem Benutzernamen 'john_doe', dem Passwort 'mypassword' und dem Spiel mit der ID 1 hinzu. */

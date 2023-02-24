@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
     $newPwHash = NULL;
 
     if (empty($username.$pw)){
-        header("location: ../../index.php?error=emptyimputTest");
+        header("location: ../../../index.php?error=emptyimputTest");
         exit();
     }
 
@@ -16,11 +16,11 @@ if (isset($_POST['submit'])) {
     require_once 'functions.inc.php';
 
     if (emptyImputLogin($username, $pw) !== false) {
-        header("location: ../../index.php?error=emptyimput");
+        header("location: ../../../index.php?error=emptyimput");
         exit();
     }
     if (invalidUid($username) == true) {
-        header("location: ../../index.php?error=invaliduid");
+        header("location: ../../../index.php?error=invaliduid");
         exit();
     }
     
@@ -28,6 +28,6 @@ if (isset($_POST['submit'])) {
     loginUser($db, $username, $pw);
 }
 else {
-    header("location: ../../index.php");
+    header("location: ../../../index.php");
     exit();
 }
