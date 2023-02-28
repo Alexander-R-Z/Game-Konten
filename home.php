@@ -26,8 +26,8 @@ require_once('assets/header/header.php');
                     $gamenameId = $game;
                     $resultDB = retrieveAccountDbEntrys($db, $gamenameId);
                     $count = countAccountDataForGame($db, $gamenameId);
-                    // $count = 15;
-                    for ($i = 1; $i < $count; $i++) { 
+                    $count = 5;
+                    for ($i = 1; $i <= $count; $i++) { 
                         while ($row = $resultDB->fetchArray(SQLITE3_ASSOC)) {
                             ?>
                             
