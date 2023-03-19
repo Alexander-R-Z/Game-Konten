@@ -13,8 +13,8 @@ openModalButtons.forEach((button) => {
 
 // close modal when click outside modal
 overlay.addEventListener('click', () => {
-	const modals = document.querySelectorAll('.modal-account-login-data-form-edit.active');
-	modals.forEach((modal) => {
+	const modal = document.querySelectorAll('.modal-account-login-data-form-edit.active');
+	modal.forEach((modal) => {
 		closeModal(modal);
 		console.log('close modal when click outside modal');
 	});

@@ -5,8 +5,8 @@
 }
 
 body {
-  background-color: hwb(228 92% 6%);
-  color: hwb(0 15% 85%);
+  background-color: hwb(0 12% 88%);
+  color: hwb(0 87% 13%);
   font-family: "Open Sans", sans-serif;
   min-height: 100vh;
   min-height: 100dvh;
@@ -47,7 +47,7 @@ body .flex {
   gap: clamp(0rem, 4vw, 6rem);
 }
 body h1 {
-  color: hsl(227deg, 11%, 74%);
+  color: hwb(0 100% 0%);
   text-shadow: none;
   font-family: "Open Sans", sans-serif;
   font-size: 60px;
@@ -115,7 +115,7 @@ body header.primary-header > nav .primary-navigation a > [aria-hidden=true] {
 }
 body nav h2 {
   margin: 0;
-  color: hwb(0 15% 85%);
+  color: hwb(0 87% 13%);
   font-family: "Open Sans", sans-serif;
   font-size: 40px;
   font-weight: 500;
@@ -134,11 +134,11 @@ body nav ul li {
   margin-right: 10px;
 }
 body nav ul li a {
-  color: hwb(0 15% 85%);
+  color: hwb(0 87% 13%);
   text-decoration: none;
 }
 body .login-section a {
-  color: hwb(0 15% 85%);
+  color: hwb(0 87% 13%);
   text-decoration: none;
   font-family: "Open Sans", sans-serif;
   font-size: 26px;
@@ -167,33 +167,33 @@ body button, body input {
   font-size: 16px;
   border-radius: 320px;
   padding: 16px;
-  background-color: hwb(228 92% 6%);
-  text-shadow: 1px 1px 1px hwb(0 100% 0%/0.85);
+  background-color: hwb(0 12% 88%);
+  text-shadow: 1px 1px 1px hwb(0 20% 80%);
 }
 body input {
-  box-shadow: inset 2px 2px 5px hwb(227 73% 20%), inset -5px -5px 10px hwb(0 100% 0%);
+  box-shadow: inset 2px 2px 5px hwb(0 8% 92%), inset -5px -5px 10px hwb(0 15% 85%);
   transition: all 0.2s ease-in-out;
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
-  color: hwb(0 15% 85%);
+  color: hwb(0 87% 13%);
 }
 body input:focus {
-  box-shadow: inset 1px 1px 2px hwb(227 73% 20%), inset -1px -1px 2px hwb(0 100% 0%);
+  box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 15% 85%);
 }
 body button {
-  color: hwb(0 15% 85%);
+  color: hwb(0 87% 13%);
   font-weight: bold;
   font-weight: 600;
-  box-shadow: -5px -5px 20px hwb(0 100% 0%), 5px 5px 20px hwb(227 73% 20%);
+  box-shadow: -5px -5px 20px hwb(0 15% 85%), 5px 5px 20px hwb(0 8% 92%);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
 body Button:hover {
-  box-shadow: -2px -2px 5px hwb(0 100% 0%), 2px 2px 5px hwb(227 73% 20%);
+  box-shadow: -2px -2px 5px hwb(0 15% 85%), 2px 2px 5px hwb(0 8% 92%);
 }
 body button:active {
-  box-shadow: inset 1px 1px 2px hwb(227 73% 20%), inset -1px -1px 2px hwb(0 100% 0%);
+  box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 15% 85%);
 }
 body button .icon {
   margin-right: 8px;
@@ -266,7 +266,6 @@ body main .valorant {
   margin-bottom: 2em;
 }
 body main form.account-login-data-form {
-  position: relative;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -274,20 +273,21 @@ body main form.account-login-data-form {
   border-radius: 1em;
 }
 body main form.account-login-data-form .account-login-data-div {
+  position: relative;
   display: grid;
   justify-content: center;
   gap: 1em;
   margin: 1rem;
   border-radius: 1em;
   padding: 5rem 3rem 6.5rem 3rem;
-  background-color: hwb(228 92% 6%);
-  box-shadow: -5px -5px 20px hwb(0 100% 0%), 5px 5px 20px hwb(227 73% 20%);
+  background-color: hwb(0 12% 88%);
+  box-shadow: -5px -5px 20px hwb(0 15% 85%), 5px 5px 20px hwb(0 8% 92%);
 }
 body main form.account-login-data-form .account-login-data-div:hover {
-  box-shadow: -2px -2px 5px hwb(0 100% 0%), 2px 2px 5px hwb(227 73% 20%);
+  box-shadow: -2px -2px 5px hwb(0 15% 85%), 2px 2px 5px hwb(0 8% 92%);
 }
 body main form.account-login-data-form .account-login-data-div:focus {
-  box-shadow: inset 1px 1px 2px hwb(227 73% 20%), inset -1px -1px 2px hwb(0 100% 0%);
+  box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 15% 85%);
 }
 body main form.account-login-data-form .lable-input {
   display: grid;
@@ -299,7 +299,7 @@ body main form.account-login-data-form .lable-input {
 body main .account-data-input {
   position: relative;
   padding-right: 3rem;
-  background-color: hwb(228 92% 6%);
+  background-color: hwb(0 12% 88%);
 }
 body main .input-copy {
   position: absolute;
@@ -317,8 +317,8 @@ body main .button-copy {
 }
 body main .edit-button {
   position: absolute;
-  top: 2em;
-  right: 2em;
+  top: 1em;
+  right: 1em;
   background: none;
   box-shadow: none;
   margin: 0;
@@ -327,7 +327,7 @@ body main .edit-button {
 body main .edit-button img {
   height: 1.5em;
   width: auto;
-  filter: invert(0);
+  filter: invert(1);
 }
 
 .modal-account-login-data-form-edit {
@@ -345,7 +345,7 @@ body main .edit-button img {
   margin: 1rem;
   border-radius: 1em;
   padding: 7rem 7rem;
-  background-color: hwb(228 92% 6%);
+  background-color: hwb(0 12% 88%);
 }
 .modal-account-login-data-form-edit input {
   min-width: 22em;
@@ -361,7 +361,7 @@ body main .edit-button img {
 .modal-account-login-data-form-edit .account-data-input {
   position: relative;
   padding-right: 3rem;
-  background-color: hwb(228 92% 6%);
+  background-color: hwb(0 12% 88%);
 }
 .modal-account-login-data-form-edit .input-copy {
   position: absolute;
@@ -379,20 +379,96 @@ body main .edit-button img {
 }
 .modal-account-login-data-form-edit .close-button {
   position: absolute;
-  top: 2em;
-  right: 2em;
+  top: 1em;
+  right: 1em;
   background: none;
   box-shadow: none;
   margin: 0;
   padding: 0;
 }
-.modal-account-login-data-form-edit .close-button img {
-  height: 2em;
-  width: auto;
-  filter: invert(0);
+.modal-account-login-data-form-edit .close-button {
+  display: flex;
+  margin-right: 1em;
+  margin-top: 1em;
 }
 
 .modal-account-login-data-form-edit.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-account-login-data-form-create {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  z-index: 9900;
+}
+.modal-account-login-data-form-create .account-login-data-div {
+  display: grid;
+  justify-content: center;
+  gap: 1em;
+  margin: 1rem;
+  border-radius: 1em;
+  padding: 7rem 7rem;
+  background-color: hwb(0 12% 88%);
+}
+.modal-account-login-data-form-create input {
+  min-width: 22em;
+  margin-bottom: 1em;
+  border-radius: 20px;
+}
+.modal-account-login-data-form-create .lable-input {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.modal-account-login-data-form-create .account-data-input {
+  position: relative;
+  padding-right: 3rem;
+  background-color: hwb(0 12% 88%);
+}
+.modal-account-login-data-form-create .input-copy {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+}
+.modal-account-login-data-form-create .copy-to-clipboard-helper {
+  position: relative;
+}
+.modal-account-login-data-form-create .button-copy {
+  background: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+.modal-account-login-data-form-create .close-button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+.modal-account-login-data-form-create .close-button {
+  display: flex;
+  margin-right: 1em;
+  margin-top: 1em;
+}
+.modal-account-login-data-form-create .create-dopdown-games {
+  background-color: hwb(0 12% 88%);
+  padding: 16px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: inset 2px 2px 5px hwb(0 8% 92%), inset -5px -5px 10px hwb(0 15% 85%);
+  padding-right: 3em;
+  color: hwb(0 87% 13%);
+}
+
+.modal-account-login-data-form-create.active {
   transform: translate(-50%, -50%) scale(1);
 }
 
@@ -414,4 +490,36 @@ body main .edit-button img {
   pointer-events: all;
   -webkit-backdrop-filter: blur(0.75px);
           backdrop-filter: blur(0.75px);
-}/*# sourceMappingURL=theme-light-neomorphic.css.map */
+}
+
+.icon-home {
+  scale: 3;
+  filter: invert(1);
+}
+
+.floating-create-button {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 9001;
+  background: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+.floating-create-button .create-button {
+  display: flex;
+  background: none;
+  box-shadow: none;
+  margin: 0;
+  border-radius: 0.5em;
+  box-shadow: -2px -2px 5px hwb(0 15% 85%), 2px 2px 5px hwb(0 8% 92%);
+  background-color: hwb(0 12% 88%);
+}
+.floating-create-button .create-button:hover {
+  box-shadow: -2px -2px 5px hwb(0 15% 85%), 2px 2px 5px hwb(0 8% 92%);
+  filter: brightness(0.95);
+}
+.floating-create-button .create-button:focus {
+  box-shadow: inset 1px 1px 2px hwb(0 8% 92%), inset -1px -1px 2px hwb(0 15% 85%);
+}/*# sourceMappingURL=dark-neomorphic.css.map */

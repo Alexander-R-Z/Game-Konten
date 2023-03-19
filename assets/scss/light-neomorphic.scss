@@ -1,0 +1,17 @@
+$h1-color: hsl(227deg 11% 74%);
+$h2-color: hwb(0 7% 93%);
+$h3-color: hwb(0 11% 89%);
+$text-color-primary: hwb(0 15% 85%);
+$text-color-secondary: hwb(227 73% 20%);
+$text-shadow: hwb(0 100% 0% / 0.85);
+$background-color-primary: hwb(228 92% 6%);
+$background-color-secondary: hwb(223 93% 5%);
+$shadow-dark: hwb(227 73% 20%);
+$shadow-light: hwb(0 100% 0%);
+$button-red: hwb(6 0% 32%);
+$button-background-color-primary: hwb(228 92% 6%);
+$invert: 0;
+
+$homeMaxColumnCount: 4;
+
+@import 'neomorphic';

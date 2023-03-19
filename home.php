@@ -21,11 +21,8 @@ require_once('assets/header/header.php');
                     $game = retrieveGameDbEntrys($db);
                     // var_dump($game);
                     $row = null;
-                    $count = 0;
-                    $test = 0;
-                    $gamenameId = $game;
-                    $resultDB = retrieveAccountDbEntrys($db, $gamenameId);
-                    $count = countAccountDataForGame($db, $gamenameId);
+                    $resultDB = retrieveAccountDbEntrys($db, $game);
+                    // $count = countAccountDataForGame($db, $gamenameId);
                     while ($row = $resultDB->fetchArray(SQLITE3_ASSOC)) {
                         ?>
                         
@@ -95,15 +92,22 @@ require_once('assets/header/header.php');
                         <?php
                     }
                 ?>
+
+                <form class="floating-create-button" onsubmit="handleSubmit(event)">
+                    <div class="account-login-data-div">
+                        <button data-modal-target-create="#modal-account-login-data-form-create" class="create-button"><ion-icon name="add-outline" size="large"></ion-icon></button>
+                    </div>
+                </form>
+
             </div>
         </section>
     </div>
     <div class="theme">
         <button id="theme-toggle" class="dark-mode-toggle" aria-label="toggle Dark Mode "><i class="icon ion-md-moon"></i></button>
     </div>
-    <div class="modal-account-login-data-form-edit" id="modal-account-login-data-form-edit">
+    <form method="POST" action="assets/includes/home-card/home-card.inc.php" class="modal-account-login-data-form-edit" id="modal-account-login-data-form-edit">
         <div class="modal-account-login-data-form-edit-container account-login-data-div">
-            <button data-close-button="close-button" class="close-button"><img src="assets/img/close.png" alt=""></button>
+            <button data-close-button="close-button" class="close-button"><ion-icon name="close-outline" size="large"></ion-icon></button>
             <div class="lable-input">
                 <label for="username">Username</label>
                 <div class="copy-to-clipboard-helper">
@@ -161,7 +165,86 @@ require_once('assets/header/header.php');
                 </div>
             </div>
         </div>
-    </div>
+    </form>
+    <form class="modal-account-login-data-form-create" id="modal-account-login-data-form-create">
+        <div class="modal-account-login-data-form-edit-container account-login-data-div">
+            <button data-close-button-create="close-button" class="close-button"><ion-icon name="close-outline" size="large"></ion-icon></button>
+            <div class="lable-input">
+                <label for="username">Game</label>
+                <select name="Game" class="create-dopdown-games">
+                    <?php 
+                        $resultGamename = retrieveGameDbEntrysName($db);
+                        $noValue = true;
+                        echo '<option value="" selected>Select a Game</option>';
+
+                        while ($rowGamename = $resultGamename->fetchArray(SQLITE3_ASSOC)) {
+                            $noValue = false;
+                            echo '<option value="'.$rowGamename['gamename'].'">'.$rowGamename['gamename'].'</option>';
+                        }
+                        if ($noValue) {
+                            echo '<option value="">Select a car</option>';
+                        }
+                    ?>
+                </select>
+            </div>
+            <div class="lable-input">
+                <label for="username">Username</label>
+                <div class="copy-to-clipboard-helper">
+                    <input class="account-data-input" type="text" name="username" placeholder="Username" />
+                    <div class="input-copy">
+                        <button class="button-copy" type="button" onclick="copyToClipboard('test')">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="lable-input">
+                <label for="password">Password</label>
+                <div class="copy-to-clipboard-helper">
+                    <input class="account-data-input" type="text" name="password" placeholder="Password" />
+                    <div class="input-copy">
+                        <button class="button-copy" type="button" onclick="copyToClipboard('test')">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="lable-input">
+                <label for="displayname">Displayname</label>
+                <div class="copy-to-clipboard-helper">
+                    <input class="account-data-input" type="text" name="displayname" placeholder="Displayname"/>
+                    <div class="input-copy">
+                        <button class="button-copy" type="button" onclick="copyToClipboard('test')">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="lable-input">
+                <label for="tagline">Tag</label>
+                <div class="copy-to-clipboard-helper">
+                    <input class="account-data-input" type="text" name="tagline" placeholder="EUW00"/>
+                    <div class="input-copy">
+                        <button class="button-copy" type="button" onclick="copyToClipboard('test')">
+                            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
     <div id="overlay"></div>
     
 </main>
@@ -177,6 +260,7 @@ require_once('assets/header/header.php');
     }
 </script>
 <script src="assets/js/modal-edit.js"></script>
+<script src="assets/js/modal-create.js"></script>
 <script>
 function handleSubmit(event) {
   // Verhindern, dass das Formular neu geladen wird

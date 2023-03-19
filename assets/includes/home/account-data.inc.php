@@ -68,6 +68,20 @@ function retrieveGameDbEntrys($db) {
     $stmt->close();
 }
 
+function retrieveGameDbEntrysName($db) {
+    $sql = "SELECT gamename FROM Game;";
+    $stmt = $db->prepare($sql);
+    if (!$stmt) {
+        header('location: ../../home.php?error=stmtfailed');
+        exit();
+    }
+
+    $resultGamename = $stmt->execute();
+
+    return $resultGamename;
+    $stmt->close();
+}
+
 function retrieveAccountDbEntrys($db, $gamenameId) {
     $sql = "SELECT * FROM AccountData WHERE gamenameId = :gamenameId;";
     $stmt = $db->prepare($sql);
